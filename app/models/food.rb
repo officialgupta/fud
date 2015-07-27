@@ -1,9 +1,9 @@
 class Food < ActiveRecord::Base
   has_many :items
 
-  validates :name, presence: true
+  validates :name, uniqueness: true
 
-  validates :name, :food_type, :time_to_expire_in_days, uniqueness: true
+  validates :name, :food_type, :time_to_expire_in_days, presence: true
 
   def self.search(words)
     foods = Set.new
