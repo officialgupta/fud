@@ -1,0 +1,57 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*PREQUISITES*/
+$color-main: #568203;
+$color-secondary: #568203;
+$lato: 'Lato', sans-serif;
+
+/*MAIN*/
+
+body {
+  margin: 0;
+  font-family: $lato;
+}
+
+#header {
+  display: flex;
+  background-color: #568203;
+  width: 100%;
+}
+
+#pantry, #fridge, #freezer {
+  display: flex;
+  width: 460px;
+  float: left;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.subtitle {
+  color: #4a585e;
+  font-size: 25px;
+}
+
+.card {
+  border-radius: 10%;
+  color: white;
+  padding: 20px;
+}
+
+.expired {
+  background-color: red;
+}
+
+.soon {
+  background-color: orange;
+}
+
+.indate {
+  background-color: green;
+}
+
+#plus_button {
+  border-radius: 50%;
+}
