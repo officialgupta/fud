@@ -21,6 +21,8 @@ gem 'html2haml'
 # Users
 gem 'devise'
 
+# Time
+gem 'chronic_duration'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
