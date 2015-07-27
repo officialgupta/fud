@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @foods = Food.search(params[:foods])
   end
 
   # GET /items/1/edit
