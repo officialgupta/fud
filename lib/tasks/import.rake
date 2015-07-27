@@ -64,7 +64,11 @@ namespace :import do
           expire = 9001
         end
         puts "#{row.to_hash["Name"]}  #{row.to_hash["Name_subtitle"]} - #{type} - #{expire}"
-        Food.create!(food_type: type, name: "#{row.to_hash["Name"]} #{row.to_hash["Name_subtitle"]}", time_to_expire_in_days: expire)
+        begin
+          Food.create!(food_type: type, name: "#{row.to_hash["Name"]} #{row.to_hash["Name_subtitle"]}", time_to_expire_in_days: expire)
+        rescue
+          # Do nothing
+        end
       end
     end
   end

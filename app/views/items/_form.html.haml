@@ -1,0 +1,24 @@
+= form_for(@item) do |f|
+  - if @item.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@item.errors.count, "error")
+        prohibited this item from being saved:
+      %ul
+        - @item.errors.full_messages.each do |message|
+          %li= message
+  .actions
+
+    = f.label :food_id
+    = number_field(:item, :food_id, min: 1)
+
+    = f.label :quantity
+    = number_field(:item, :quantity, min: 1)
+
+    = f.label :quantity_type
+    = f.text_area :quantity_type
+
+    = f.label :when_bought
+    = f.date_field :when_bought
+
+    = f.submit
