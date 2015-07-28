@@ -1,7 +1,9 @@
 /*PREQUISITES*/
 $color-main: #568203;
-$color-main-dark: #346001;
+$color-main-dark: #235000;
 $color-secondary: #568203;
+$color-button: #3d4F55;
+$color-button-dark: #1b2d33;
 $lato: 'Lato', sans-serif;
 
 /*MAIN*/
@@ -25,16 +27,19 @@ body {
   height: 30px;
   bottom: 0;
   width: 100%;
+  line-height: 30px;
+  color: white;
+  text-align: center;
 }
 
 #logo {
-  width: 10%;
-  height: 5%;
+  width: 4%;
+  height: 2%;
   order: 1;
   padding: 20px;
 }
 
-#content{
+#content {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
@@ -45,7 +50,6 @@ body {
   display: flex;
   width: 25%;
   display: block;
-  margin-top: 10px;
   text-align: center;
 }
 
@@ -55,7 +59,6 @@ body {
 
 .fridge {
   order: 2;
-  background-color: #eee;
 }
 
 .freezer {
@@ -63,54 +66,123 @@ body {
 }
 
 .subtitle {
-  color: #4a585e;
+  color: $color-button-dark;
   font-size: 25px;
 }
 
- /*MAYANK IS THE UNCOOLIEST*/
+ /*MAYANK IS NOT THE COOLIEST*/
  
  #plus_button {
   border-radius: 50%;
-  background-color: #568203;
+  background-color: $color-button;
   padding: 20px;
   width: 20px;
   height: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   position: relative;
   text-align: center;
   font-size: 30px;
   line-height: 20px;
   color: white;
-  margin-top: 10px;
+  box-shadow: 0 0 6px #ccc;
 }
  
 /* CARD STYLING */
 
 .card {
-  //border-radius: 10px;
-  color: white;
+  background-color: #fafafa;
+  /* put bg-images here neen :) */
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
   padding: 20px;
   margin-top: 10px;
   height: 60px;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  box-shadow: 0 0 8px #ccc; /* ADD SUPPORT IF YOU WANT */
 }
 
+.food_expiry {
+  border-radius: 50%;
+  background-color: $color-button;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.9;
+  position: relative;
+  line-height: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  bottom: 10px;
+}
+
+.food_title {
+  color: white;
+  line-height: 60px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 20px;
+  
+}
+/*overlays for images*/
+
+.expired,.soon,.indate {
+  //opacity: 0.3;
+  
+}
 .expired {
-  // background-color: #dd3322;
+  background-color: #dd3322;
 }
 
 .soon {
-  // background-color: #ffaa22;
+  background-color: #ffaa22;
 }
 
 .indate {
-  // background-color: #78a425;
+  background-color: #78a425;
 }
 
-#menu {
-  background-color: #000;
-  margin-top: 0;
+/* STUFF */
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
 }
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+//	position: absolute;
+//	top: 0;
+//	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+

@@ -1,12 +1,21 @@
 %div#menu
   %div#plus_button +
 %div#content
-  %div.pantry
+
+  %div.pantry  
     %h1.subtitle Pantry
-    %div.card.expired expired
+    
+    %div.flip-container
+      %div.flipper.card.expired
+        %div.front
+          %div.food_expiry - days
+          %div.food_title Food Title
+        %div.back
+    
     %div.card.soon soon
     %div.card.indate indate
   %div.fridge
+    
     %h1.subtitle Fridge
     %div.card.expired expired
     %div.card.soon soon
