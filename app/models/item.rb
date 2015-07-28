@@ -2,7 +2,7 @@ class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :food
 
-  validates :quantity_type, :quantity, :when_bought, :when_expire, :user_id, :food_id, uniqueness: true
+  validates :quantity_type, :quantity, :when_bought, :when_expire, :user_id, :food_id, presence: true
 
   before_validation :set_when_expire
 

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  autocomplete :food, :name
 
   # GET /items
   # GET /items.json
@@ -15,7 +16,11 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    if params[:foods].present?
     @foods = Food.search(params[:foods])
+    else
+      @foods = Food.all
+    end
   end
 
   # GET /items/1/edit
@@ -27,6 +32,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @item.food_id = Food.where(:name => params[:item][:food_id]).first.id
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully added.' }
