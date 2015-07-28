@@ -3,7 +3,7 @@ class Food < ActiveRecord::Base
 
   validates :name, uniqueness: true
 
-  validates :name, :food_type, :time_to_expire_in_days, presence: true
+  validates :name, :food_type, :where_stored, :time_to_expire_in_days, presence: true
 
   def self.search(words)
     foods = Set.new

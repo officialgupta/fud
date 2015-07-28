@@ -6,8 +6,14 @@ class Item < ActiveRecord::Base
 
   before_validation :set_when_expire
 
+  before_validation :set_where_stored
+
   def set_when_expire
     self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days
+  end
+
+  def set_where_stored
+    self.where_stored = self.food.where_stored
   end
 
   def expired?

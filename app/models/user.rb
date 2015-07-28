@@ -4,5 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :items       
+  has_many :items
+
+  phony_normalize :phone, :default_country_code => 'UK'
+
+  validates :phone, :phony_plausible => true
+
+  validates :email, :postcode, :phone, :presence => true
 end

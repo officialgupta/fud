@@ -14,6 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Phone stuff
+gem 'clockworksms'
+
+gem 'phony_rails'
+
 # Haml stuff
 gem 'haml'
 

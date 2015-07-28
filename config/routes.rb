@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   resources :items
-  get '/items/new/:foods' => 'items#new' 
+  get '/items/new/:foods' => 'items#new'
 
   devise_for :users
+
   root to: "items#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
