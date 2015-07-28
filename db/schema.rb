@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727150201) do
+ActiveRecord::Schema.define(version: 20150728093047) do
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150727150201) do
     t.integer  "time_to_expire_in_days"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "where_stored"
   end
 
   create_table "items", force: :cascade do |t|
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 20150727150201) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "postcode"
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

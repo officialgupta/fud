@@ -54,6 +54,10 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    countries (0.11.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -74,6 +78,7 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     jbuilder (2.2.16)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -94,6 +99,11 @@ GEM
       mini_portile (~> 0.6.0)
     numerizer (0.1.1)
     orm_adapter (0.5.0)
+    phony (2.14.12)
+    phony_rails (0.12.9)
+      activesupport (>= 3.0)
+      countries (~> 0.11, >= 0.11.5)
+      phony (~> 2.12)
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -177,6 +187,7 @@ DEPENDENCIES
   html2haml
   jbuilder (~> 2.0)
   jquery-rails
+  phony_rails
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -47,15 +47,20 @@ namespace :import do
         begin
           if ChronicDuration.parse(row.to_hash["Refrigerate Output [Display ONLY!]"]).present?
             expire = ChronicDuration.parse(row.to_hash["Refrigerate Output [Display ONLY!]"])
+            where_stored =  "Fridge"
           elsif ChronicDuration.parse(row.to_hash["Freeze Output  [Display ONLY!]"]).present?
             expire = ChronicDuration.parse(row.to_hash["Freeze Output  [Display ONLY!]"])
+            where_stored =  "Freezer"
           elsif ChronicDuration.parse(row.to_hash["Refrigerate After Opening Output  [Display ONLY!]"]).present?
             expire = ChronicDuration.parse(row.to_hash["Refrigerate After Opening Output  [Display ONLY!]"])
+            where_stored =  "Fridge"
           else
             expire = ChronicDuration.parse(row.to_hash["Pantry After Opening Output [Display ONLY!]"])
+            where_stored =  "Pantry"
           end
         rescue
           expire = ChronicDuration.parse(row.to_hash["Refrigerate After Opening Output  [Display ONLY!]"])
+          where_stored =  "Fridge"
         end
 
         begin
@@ -65,7 +70,12 @@ namespace :import do
         end
         puts "#{row.to_hash["Name"]}  #{row.to_hash["Name_subtitle"]} - #{type} - #{expire}"
         begin
-          Food.create!(food_type: type, name: "#{row.to_hash["Name"]} #{row.to_hash["Name_subtitle"]}", time_to_expire_in_days: expire)
+          Food.create!(
+            food_type: type,
+            name: "#{row.to_hash["Name"]} #{row.to_hash["Name_subtitle"]}",
+            time_to_expire_in_days: expire,
+            where_stored: where_stored
+          )
         rescue
           # Do nothing
         end
