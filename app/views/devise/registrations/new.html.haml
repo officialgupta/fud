@@ -6,6 +6,23 @@
     %br/
     = f.email_field :email, autofocus: true
   .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name
+
+  .field
+    = f.label :postcode
+    %br/
+    = f.text_field :postcode
+  .field
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  .field
     = f.label :password
     - if @minimum_password_length
       %em
@@ -16,14 +33,6 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :postcode
-    %br/
-    = f.text_field :postcode
-  .field
-    = f.label :phone
-    %br/
-    = f.text_field :phone
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

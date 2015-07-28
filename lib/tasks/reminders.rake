@@ -13,7 +13,7 @@ namespace :reminders do
         user.items.select {|i| i.expired_in?(3)}.last.food.name
       else
         items = user.items.expired_in?(3).first
-      ends
+      end
 
       message = api.messages.build( :to => user.phone, :content => "Your #{items} will expire in three days, consider using them. Reply to 84433 with item:status for each item to update it's status to in-use, used, donated or disposed." )
       response = message.deliver
@@ -26,5 +26,6 @@ namespace :reminders do
       end
     end
   end
+
 
 end
