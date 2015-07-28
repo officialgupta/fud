@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :items
-  get '/items/new/:foods' => 'items#new'
+  resources :items do
+    get :autocomplete_food_name, :on => :collection
+  end
+  get '/items/new/search/:foods' => 'items#new'
 
   devise_for :users
 

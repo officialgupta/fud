@@ -10,7 +10,7 @@
   .actions
 
     = f.label :food_id
-    = f.collection_select(:food_id, @foods, :id, :name, prompt: true)
+    =f.autocomplete_field :food_id, autocomplete_food_name_items_path
 
     = f.label :quantity
     = number_field(:item, :quantity, min: 1)
