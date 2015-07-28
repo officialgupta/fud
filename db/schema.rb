@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20150728144411) do
     t.string   "where_stored"
   end
 
+  create_table "foods_recipes", force: :cascade do |t|
+    t.integer "food_id"
+    t.integer "recipe_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.decimal  "quantity"
     t.string   "quantity_type"
@@ -45,6 +50,15 @@ ActiveRecord::Schema.define(version: 20150728144411) do
     t.datetime "updated_at",    null: false
     t.string   "status"
     t.string   "where_stored"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "instructions"
+    t.integer  "user_id"
+    t.string   "url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +78,8 @@ ActiveRecord::Schema.define(version: 20150728144411) do
     t.string   "phone"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
