@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :items
   get '/items/new/:foods' => 'items#new'
 
-  devise_for :users, :controllers => { :registrations => "user/registrations" }
+  devise_for :users
 
   root to: "items#index"
 
