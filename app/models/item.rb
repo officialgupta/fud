@@ -23,4 +23,8 @@ class Item < ActiveRecord::Base
   def expired_in?(days)
     Time.now + days.days > self.when_expire
   end
+
+  def expires_in
+    self.when_expire - Date.now 
+  end
 end
