@@ -14,7 +14,10 @@ class Food < ActiveRecord::Base
       foods << where(['lower(name) LIKE ?', "%#{keyword.downcase}%"])
       foods << where(['lower(food_type) LIKE ?', "%#{keyword.downcase}%"])
     end
-    foods.first.uniq
+    foods = foods.first
+    dups = foods.group_by {|e| e}.select { |k,v| v.size > 1}.keys
+    foods -= dups
+    dups + foods
   end
 
   def self.from_ean(ean)
