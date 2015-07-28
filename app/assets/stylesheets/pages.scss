@@ -20,7 +20,12 @@ body {
   width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
-  
+}
+
+#logo {
+  width: 20%;
+  height: 5%;
+  order: 1;
 }
 
 #pantry, #fridge, #freezer {
@@ -30,6 +35,12 @@ body {
   display: inline-block;
   margin-left: 20px;
   margin-right: 20px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+#fridge {
+  background-color: blue;
 }
 
 .subtitle {
@@ -37,27 +48,40 @@ body {
   font-size: 25px;
 }
 
+ /*MAYANK IS NOT VERY COOL*/
+
 .card {
-  border-radius: 20px;
+  border-radius: 10px;
   color: white;
   padding: 20px;
+  margin-top: 10px;
+  height: 60px;
 }
 
 .expired {
-  background-color: red;
+  background-color: #ee4433;
 }
 
 .soon {
-  background-color: orange;
+  background-color: #ffaa22;
 }
 
 .indate {
-  background-color: green;
+  background-color: #78a425;
 }
 
 #plus_button {
   border-radius: 50%;
-  background-color: #56b947;
-  padding: 10px;
-  width: auto;
+  background-color: #568203;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 20px;
+  color: white;
+  margin-top: 10px;
 }

@@ -1,5 +1,4 @@
-%div#header
-  %div#logo= image_tag("logo.png")
+%div#header= image_tag("logo.png", id: "logo")
 %div#content
   %div#pantry
     %h1.subtitle Pantry
@@ -9,12 +8,17 @@
     %div#plus_button +
   %div#fridge
     %h1.subtitle Fridge
-    %div.card.expired expired
+    %div.card.expired
+      %div img
+      %div expired
+      %div eyyy
     %div.card.soon soon
     %div.card.indate indate
+    %div#plus_button +
   %div#freezer
     %h1.subtitle Freezer
     %div.card.expired expired
     %div.card.soon soon
     %div.card.indate indate
+    %div#plus_button +
 %div#footer advertise your LinkedIn profiles here maties.
