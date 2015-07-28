@@ -16,4 +16,10 @@ class Food < ActiveRecord::Base
     end
     foods.first.uniq
   end
+
+  def self.from_ean(ean)
+    auth = {:username => "fe1f040131f9f3503d5afe14137ad067", :password => "test"}
+    response = HTTParty.get("https://api.outpan.com/v1/products/#{ean}", :basic_auth => auth)
+    self.search(response["name"]).first
+  end
 end
