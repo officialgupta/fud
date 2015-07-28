@@ -12,7 +12,6 @@ gem 'haml'
 gem 'html2haml'
 gem 'devise'
 gem 'chronic_duration'
-gem 'jquery-rails'
 gem 'rails4-autocomplete'
 gem 'jquery-rails'
 gem "jquery-ui-rails"
@@ -21,6 +20,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'geokit-rails'
+gem 'whenever'
+gem 'actionmailer', :require => false
 
 group :development, :test do
      gem 'byebug'
