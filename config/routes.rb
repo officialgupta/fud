@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   get '/items/new/search/:foods' => 'items#new'
 
+  get '/sms' => 'sms#receiving'
+
   devise_for :users
 
   root to: "items#index"
