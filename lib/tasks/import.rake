@@ -16,6 +16,7 @@ namespace :import do
         puts "#{Foodbank.last.name} has been added to the database"
       end
     end
+  end
 
   task food: :environment do
     Food.delete_all
