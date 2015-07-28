@@ -12,8 +12,12 @@ gem 'haml'
 gem 'html2haml'
 gem 'devise'
 gem 'chronic_duration'
-gem 'jquery-rails'
 gem 'rails4-autocomplete'
+
+# JSON
+gem 'httparty'
+
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'turbolinks'
@@ -23,7 +27,7 @@ gem 'geocoder'
 gem 'geokit-rails'
 
 group :development, :test do
-     gem 'byebug'
-     gem 'web-console', '~> 2.0'
-     gem 'spring'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 end

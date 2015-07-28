@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/items/new/search/:foods' => 'items#new'
   get 'foodbanks/find' => 'foodbanks#find'
 
+  get '/sms' => 'sms#receiving'
+
   devise_for :users
 
   root to: "items#index"

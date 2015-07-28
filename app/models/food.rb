@@ -1,6 +1,8 @@
 class Food < ActiveRecord::Base
   has_many :items
 
+  has_and_belongs_to_many :recipes
+
   validates :name, uniqueness: true
 
   validates :name, :food_type, :where_stored, :time_to_expire_in_days, presence: true
