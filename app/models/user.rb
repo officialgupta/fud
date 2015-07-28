@@ -6,9 +6,11 @@ class User < ActiveRecord::Base
 
   has_many :items
 
-  phony_normalize :phone, :default_country_code => 'UK'
+  geocoded_by :postcode
 
-  validates :phone, :phony_plausible => true
+  after_validation :geocode
 
-  validates :email, :postcode, :phone, :presence => true
+  def foodbanks_within(distance)
+    Foodbank.within(distance, origin: [latitude, longitude])
+  end
 end

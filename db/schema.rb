@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728093047) do
+ActiveRecord::Schema.define(version: 20150728105736) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150728093047) do
     t.datetime "updated_at",                          null: false
     t.string   "postcode"
     t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
