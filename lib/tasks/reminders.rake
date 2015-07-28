@@ -14,11 +14,6 @@ namespace :reminders do
       else
         items = user.items.expired_in?(3).first
       end
-      @client.account.messages.create({
-        :from => '+44 1629690065',
-        :to => '+447514506414',
-        :body =>
-      })
 
       message = api.messages.build( :to => "441234567890", :content => "Your #{items} will expire in three days, consider using them." )
       response = message.deliver
