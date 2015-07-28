@@ -3,7 +3,7 @@ require 'clockwork'
 namespace :reminders do
   desc "TODO"
   task send: :environment do
-    api = Clockwork::API.new( api_key )
+    api = Clockwork::API.new("347312a2862cccbde09c98ecc7beac7429b2b8e6")
 
     User.all.each do |user|
       if user.items.expired_in?(3).count > 1
@@ -15,7 +15,7 @@ namespace :reminders do
         items = user.items.expired_in?(3).first
       end
 
-      message = api.messages.build( :to => "441234567890", :content => "Your #{items} will expire in three days, consider using them." )
+      message = api.messages.build( :to => user.phone, :content => "Your #{items} will expire in three days, consider using them." )
       response = message.deliver
 
       if response.success
