@@ -32,6 +32,9 @@ gem 'chronic_duration'
 # Autocomplete
 gem 'rails4-autocomplete'
 
+# JSON
+gem 'httparty'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "jquery-ui-rails"

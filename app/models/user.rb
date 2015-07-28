@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :items
 
+  has_many :recipes
+
   phony_normalize :phone, :default_country_code => 'UK'
 
   validates :phone, :phony_plausible => true
