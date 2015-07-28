@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150728125800) do
-=======
-ActiveRecord::Schema.define(version: 20150728105736) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -26,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150728105736) do
     t.float    "latitude"
     t.float    "longitude"
   end
->>>>>>> origin/master
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
