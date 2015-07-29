@@ -170,35 +170,39 @@ h1.subtitle {
   border: 3px solid white;
 }
 
+.one_button {
+}
+
 .recipe_button {
   width: 40px;
   height: 50px;
-  background-color: blue;
 }
 
 .other_buttons {
-  background-color: green;
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
+  width: 100%;
+  align-items: center;
+  background-color: none;
 }
 
 .donate_button, .done_button, .trash_button {
-  width: 40px;
-  height: 40px;
-  padding: 0 20px 0 20px;
+  width: 30px;
+  height: 30px;
+  padding: 0 20px 0 0;
 }
 
 .donate_button {
-  
+  order: 1;
 }
 
 .done_button {
-  
+  order: 2;
 }
 
 .trash_button {
-  
+  order: 3;
 }
 
 /*overlays for images*/
