@@ -14,8 +14,14 @@ class User < ActiveRecord::Base
 
   geocoded_by :postcode
 
-  after_validation :geocode
+  before_create :geocode
   before_save :set_score
+
+  def avatar_url
+    default_url = "#{root_url}images/guest.png"
+    gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=#{CGI.escape(default_url)}"
+  end
 
   def foodbanks_within(distance)
     Foodbank.within(distance, origin: [latitude, longitude])
@@ -26,9 +32,8 @@ class User < ActiveRecord::Base
   end
 
   def set_score
-    user_score = self.items.disposed*(-10)
-    user_score += self.items.used*10
-    user_score += self.items.donated*5
+    user_score = self.items.used.count*10
+    user_score += self.items.donated.count*5
 
     self.score = user_score
   end

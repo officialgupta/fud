@@ -5,14 +5,15 @@ class Item < ActiveRecord::Base
   validates :quantity_type, :quantity, :when_bought, :when_expire, :user_id, :food_id, presence: true
   validates :status, inclusion: {in: ["in-use", "disposed", "donating", "donated", "used"]}
 
-  before_validation :set_when_expire, :set_where_stored, :defaults
+  before_validation :defaults, :set_when_expire, :set_where_stored
+  after_create :update_user_score
 
   scope :stored_in, ->(location) { where("where_stored=", location) }
-  scope :in_use, -> { where("status = in-use") }
-  scope :donating, -> { where("status = donating") }
-  scope :donated, -> { where("status = donated") }
-  scope :used, -> { where("status = used") }
-  scope :disposed, -> { where("status = disposed") }
+  scope :in_use, -> { where("status = 'in-use'") }
+  scope :donating, -> { where("status = 'donating'") }
+  scope :donated, -> { where("status = 'donated'") }
+  scope :used, -> { where("status = 'used'") }
+  scope :disposed, -> { where("status = 'disposed'") }
 
   def set_when_expire
     self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days
@@ -43,6 +44,11 @@ class Item < ActiveRecord::Base
   end
 
   def defaults
-    status ||= "in-use"
+    self.status ||= "in-use"
+    self.when_bought ||= Date.today
+  end
+
+  def update_user_score
+    self.user.save
   end
 end
