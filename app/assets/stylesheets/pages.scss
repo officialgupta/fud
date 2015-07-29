@@ -1,0 +1,293 @@
+/*PREQUISITES*/
+$color-main: #568203;
+$color-main-dark: #235000;
+$color-main-light: #78a425;
+$color-button: #3d4F55;
+$color-button-dark: #1b2d33;
+$color-button-light: #5f6f77;
+$color-shadow: #666;
+$color-subtitle: #0B3142;
+$lato: 'Lato', sans-serif;
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css);
+
+$facebook:   #3b5998;
+$twitter:    #00a0d1;
+$gplus:      #db4a39;
+$pinterest:  #c8232c;
+$dribbble:   #ea4c89;
+$navy: #34495e;
+
+
+/*MAIN*/
+
+body {
+  margin: 0;
+  font-family: $lato;
+}
+
+#header {
+  display: flex;
+  background-color: #568203;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 5px $color-shadow;
+  height: 60px;
+  line-height: 60px;
+  align-items: center;
+}
+
+#logo {
+  width: 60px;
+  height: 30px;
+  order: 1;
+  padding: 20px;
+}
+
+#menu {
+  order: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+#footer {
+  position: fixed;
+  background-color: $color-main-dark;
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+  line-height: 30px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 5px $color-shadow;
+  z-index: 4;
+}
+
+#content {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.pantry, .fridge, .freezer {
+  display: flex;
+  width: 25%;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1.subtitle {
+  color: $color-subtitle;
+  font-size: 40px;
+  margin: 0;
+}
+
+ /*NEENA IS DEFO THE UNCOOLIEST*/
+ 
+/* CARD STYLING */
+
+.food_expiry {
+  border-radius: 50%;
+  background-color: $color-button-light;
+  padding: 20px 0 20px 0;
+  width: 60px;
+  height: 20px;
+  opacity: 0.8;
+  position: relative;
+  line-height: 20px;
+  font-size: 15px;
+  color: white;
+}
+
+.food_title {
+  color: white;
+  line-height: 60px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* BUTTONS and LINKS */
+
+.plus_button {
+  border-radius: 50%;
+  background-color: $color-button;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 20px;
+  color: white;
+  box-shadow: 0 0 5px $color-shadow;
+}
+
+.plus_link {
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 8px;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 19px;
+  color: white;
+  margin-right: 20px;
+}
+
+.recipe_link, {
+  width: 30px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.donate_link {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.profile_link {
+  border-radius: 50%;
+  position: relative;
+  color: white;
+  height: 80px;
+  width: 80px;
+  margin-right: 20px;
+  border: 3px solid white;
+}
+
+.one_button {
+}
+
+.recipe_button {
+  width: 40px;
+  height: 50px;
+}
+
+.other_buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  background-color: b;
+}
+
+.donate_button, .done_button, .trash_button {
+  width: 30px;
+  height: 30px;
+  padding: 0 20px 0 0;
+}
+
+.donate_button {
+  order: 1;
+}
+
+.done_button {
+  order: 2;
+}
+
+.trash_button {
+  order: 3;
+}
+
+/*overlays for images*/
+
+.expired,.soon,.indate {
+  //opacity: 0.3;
+}
+
+.expired {
+  background-color: #dd3322;
+}
+
+.soon {
+  background-color: #ffaa22;
+}
+
+.indate {
+  background-color: #78a425;
+}
+
+ /*PROFILE*/
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 10%;
+  height: 10%;
+  box-shadow: 0 0 5px $color-shadow;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.name {
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.row {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  // margin: 0.5em 0;
+  // float: left;
+  clear: both;
+  
+  background: transparent;
+    
+    i {
+      color: $color-main;
+      border: 2px solid $color-main;
+      border-radius: 50%;
+      padding: 1em;
+      position: relative;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      // @include transition(all 0.15s ease)
+    }
+      
+      i:hover {
+         background: $color-main;
+         color: white;
+         top: -2px;
+      }
+      
+      i:not(:first-child){
+         margin-left: 1em; 
+      }
+}
+
+.icon-facebook {
+  
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
