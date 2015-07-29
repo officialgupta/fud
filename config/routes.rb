@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/sms' => 'sms#receiving'
 
+  get '/scan' => 'scans#scan', :as => "scan"
+
   devise_for :users
 
   root to: "items#index"

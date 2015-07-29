@@ -17,6 +17,12 @@ gem 'rails4-autocomplete'
 # JSON
 gem 'httparty'
 
+# Image suff
+gem 'tesseract-ocr'
+gem 'rmagick'
+gem 'rtesseract'
+gem "paperclip", "~> 4.3"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "jquery-ui-rails"
