@@ -8,9 +8,11 @@ $color-button-light: #5f6f77;
 $color-shadow: #666;
 $color-subtitle: #0B3142;
 $lato: 'Lato', sans-serif;
+$comfortaa: 'Comfortaa', sans-serif;
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
 
 $facebook:   #3b5998;
 $twitter:    #00a0d1;
@@ -178,12 +180,9 @@ h1.subtitle {
   margin-top: 18px;
 }
 
-.one_button {
-}
-
 .recipe_button {
-  width: 40px;
-  height: 50px;
+  width: 32px;
+  height: 40px;
 }
 
 .other_buttons {
@@ -192,27 +191,26 @@ h1.subtitle {
   flex-direction: row;
   width: 100%;
   align-items: center;
-  background-color: b;
 }
 
 .donate_button, .done_button, .trash_button {
   width: 30px;
   height: 30px;
-  padding: 0 20px 0 0;
+  padding-left: 20px;
 }
 
+.donate_button:hover, .trash_button:hover,  .done_button:hover, .recipe_button:hover {
+  opacity: 0.8;
+}
 .donate_button {
   order: 1;
 }
-
 .done_button {
   order: 2;
 }
-
 .trash_button {
   order: 3;
 }
-
 /*overlays for images*/
 
 .expired,.soon,.indate {
@@ -304,3 +302,120 @@ h1.subtitle {
   display: flex;
   flex-direction: row;
 }
+
+
+/*LEADERBOARD*/
+
+.leaderboard {
+    position:relative;
+    width:70%;
+    height:70%;
+    // max-width:960px;
+    // min-width:400px;
+    // min-height:600px;
+    margin: 30px auto 0 auto;
+    padding:3%;
+    float: right;
+}
+
+.leaderboard h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin:30px;
+    padding:0;
+    color: white;
+}
+
+.content {
+    position:relative;
+    width:70%;
+    margin:3px auto 0 auto;
+    min-width:300px;
+
+}
+
+.content ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    border:5px solid $color-main-dark;
+    background-color: $color-main;
+}
+.content ul li{
+    position: relative;
+    color: white;
+    font-family: $lato;
+    padding:2% 5%;
+    border-bottom: 1px solid $color-main-dark;
+}
+
+.content ul li:last-child{
+    border-bottom:none;
+}
+
+.name{
+    font-weight:bold;
+}
+.count{
+    display:inline-block;
+    float:right;
+    color: white;
+    font-weight:bold;
+}
+.count:after{
+    content:' Likes';
+    color: white;
+    font-size:80%;
+    font-weight:normal;
+}
+
+
+/********* BLING **********/
+.content ul{
+    border-radius: 20px;
+}
+
+.animate {
+    -moz-animation: flashIt 0.2s ease 1;
+    -webkit-animation: flashIt 0.2s ease 1;
+    animation: flashIt 0.2s ease 1;
+}
+
+.animate .countold{
+    -moz-animation: spinIt 0.3s ease 1;
+    -webkit-animation: spinIt 0.3s ease 1;
+    animation: spinIt 0.3s ease 1;
+}
+
+
+@-moz-keyframes flashIt {
+    100% { opacity: 0; background-color: #FFF;}
+}
+@-webkit-keyframes flashIt {
+    100% { opacity: 0; background-color: #FFF;}
+}
+@keyframes flashIt {
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes spinIt {
+    20% {-moz-transform: rotate(-10deg)}
+    40% {-moz-transform: rotate(10deg)}
+    60% {-moz-transform: rotate(-10deg)}
+    80% {-moz-transform: rotate(10deg)}
+    100% {-moz-transform: rotate(-10deg)}
+}
+@-webkit-keyframes spinIt {
+    20% {-webkit-transform: rotate(-10deg)}
+    40% {-webkit-transform: rotate(10deg)}
+    60% {-webkit-transform: rotate(-10deg)}
+    80% {-webkit-transform: rotate(10deg)}
+    100% {-webkit-transform: rotate(-10deg)}
+}
+@keyframes spinIt {
+     20% {transform: rotate(-10deg)}
+     40% {transform: rotate(10deg)}
+     60% {transform: rotate(-10deg)}
+     80% {transform: rotate(10deg)}
+     100% {transform: rotate(-10deg)}
+ }
