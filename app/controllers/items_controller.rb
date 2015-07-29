@@ -64,6 +64,30 @@ class ItemsController < ApplicationController
     end
   end
 
+  def donate
+    @item = Item.find(params[:id])
+    @item.status = "donating"
+    @item.save
+
+    redirect_to items_url
+  end
+
+  def dispose
+    @item = Item.find(params[:id])
+    @item.status = "disposed"
+    @item.save
+
+    redirect_to items_url
+  end
+
+  def use
+    @item = Item.find(params[:id])
+    @item.status = "used"
+    @item.save
+
+    redirect_to items_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
