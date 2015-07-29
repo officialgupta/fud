@@ -1,0 +1,60 @@
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.
+g++ -shared -fPIC    -o /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.so /home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp -ltesseract 2>>/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.log
+/home/ubuntu/workspace/.ffi-inline-1000/b84de1788316d5cdebb1c8d1867711496910683a.cpp:1:30: fatal error: tesseract/strngs.h: No such file or directory
+ #include <tesseract/strngs.h>
+                              ^
+compilation terminated.

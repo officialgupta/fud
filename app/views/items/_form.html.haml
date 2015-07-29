@@ -7,7 +7,7 @@
       %ul
         - @item.errors.full_messages.each do |message|
           %li= message
-  .actions
+  %p
 
     = f.label :food_id
     =f.autocomplete_field :food_id, autocomplete_food_name_items_path
@@ -24,4 +24,4 @@
 
     = f.hidden_field :status, :value => "in-use"
 
-    = f.submit
+    = f.submit, :class => "button"

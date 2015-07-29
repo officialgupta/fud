@@ -43,6 +43,15 @@ class Item < ActiveRecord::Base
     end
   end
 
+  def self.create_from_user_photo(user_id, photo_path)
+    foods = Food.from_image(photo_path)
+    if foods.present?
+      foods.each do |food|
+        Item.create!(:food_id => food.id, :quantity => 1, :quantity_type => "units", :when_bought => Date.today)
+      end
+    end
+  end
+
   def defaults
     self.status ||= "in-use"
     self.when_bought ||= Date.today

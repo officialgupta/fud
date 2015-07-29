@@ -17,12 +17,28 @@ gem 'rails4-autocomplete'
 # JSON
 gem 'httparty'
 
+# Image suff
+gem 'tesseract-ocr'
+gem 'rmagick'
+gem 'rtesseract'
+gem "paperclip", "~> 4.3"
+gem 'spellingbee'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 gem 'geocoder'
 gem 'geokit-rails'
 

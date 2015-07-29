@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :recipes
   has_many :list_items
 
+  has_many :photos
+
   phony_normalize :phone, :default_country_code => 'UK'
 
   validates :first_name, :last_name, :presence => true
