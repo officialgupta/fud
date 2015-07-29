@@ -49,6 +49,7 @@ class Item < ActiveRecord::Base
         Item.create!(:food_id => food.id, :quantity => 1, :quantity_type => "units", :when_bought => Date.today)
       end
     end
+  end
 
   def defaults
     status ||= "in-use"
