@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  resources :photos
+
+  resources :items do
+    get :autocomplete_food_name, :on => :collection
+  end
+  get '/items/new/search/:foods' => 'items#new'
+  get 'foodbanks/find' => 'foodbanks#find'
+
+  get '/sms' => 'sms#receiving'
+
+  get '/scan' => 'scans#scan', :as => "scan"
+
+  devise_for :users
+
+  root to: "items#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,27 @@
+= form_for(@item) do |f|
+  - if @item.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@item.errors.count, "error")
+        prohibited this item from being saved:
+      %ul
+        - @item.errors.full_messages.each do |message|
+          %li= message
+  .actions
+
+    = f.label :food_id
+    =f.autocomplete_field :food_id, autocomplete_food_name_items_path
+
+    = f.label :quantity
+    = number_field(:item, :quantity, min: 1)
+
+    = f.label :quantity_type
+    = f.collection_select(:quantity_type, ["g", "kg", "ml", "l", "units"], :to_s, :to_s, prompt: true)
+
+
+    = f.label :when_bought
+    = f.date_field :when_bought
+
+    = f.hidden_field :status, :value => "in-use"
+
+    = f.submit
