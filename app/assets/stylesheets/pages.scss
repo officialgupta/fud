@@ -1,10 +1,24 @@
 /*PREQUISITES*/
 $color-main: #568203;
 $color-main-dark: #235000;
-$color-secondary: #568203;
+$color-main-light: #78a425;
 $color-button: #3d4F55;
 $color-button-dark: #1b2d33;
+$color-button-light: #5f6f77;
+$color-shadow: #666;
+$color-subtitle: #0B3142;
 $lato: 'Lato', sans-serif;
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css);
+
+$facebook:   #3b5998;
+$twitter:    #00a0d1;
+$gplus:      #db4a39;
+$pinterest:  #c8232c;
+$dribbble:   #ea4c89;
+$navy: #34495e;
+
 
 /*MAIN*/
 
@@ -19,6 +33,26 @@ body {
   width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
+  box-shadow: 0 0 5px $color-shadow;
+  height: 60px;
+  line-height: 60px;
+  align-items: center;
+}
+
+#logo {
+  width: 60px;
+  height: 30px;
+  order: 1;
+  padding: 20px;
+}
+
+#menu {
+  order: 2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
 }
 
 #footer {
@@ -30,13 +64,8 @@ body {
   line-height: 30px;
   color: white;
   text-align: center;
-}
-
-#logo {
-  width: 4%;
-  height: 2%;
-  order: 1;
-  padding: 20px;
+  box-shadow: 0 0 5px $color-shadow;
+  z-index: 4;
 }
 
 #content {
@@ -44,6 +73,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .pantry, .fridge, .freezer {
@@ -51,71 +81,30 @@ body {
   width: 25%;
   display: block;
   text-align: center;
-}
-
-.pantry {
-  order: 1;
-}
-
-.fridge {
-  order: 2;
-}
-
-.freezer {
-  order: 3;
-}
-
-.subtitle {
-  color: $color-button-dark;
-  font-size: 25px;
-}
-
- /*MAYANK IS NOT THE COOLIEST*/
- 
- #plus_button {
-  border-radius: 50%;
-  background-color: $color-button;
-  padding: 20px;
-  width: 20px;
-  height: 20px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 20px;
-  position: relative;
-  text-align: center;
-  font-size: 30px;
-  line-height: 20px;
-  color: white;
-  box-shadow: 0 0 6px #ccc;
 }
+
+h1.subtitle {
+  color: $color-subtitle;
+  font-size: 40px;
+  margin: 0;
+}
+
+ /*NEENA IS DEFO THE UNCOOLIEST*/
  
 /* CARD STYLING */
 
-.card {
-  background-color: #fafafa;
-  /* put bg-images here neen :) */
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  padding: 20px;
-  margin-top: 10px;
-  height: 60px;
-  box-shadow: 0 0 8px #ccc; /* ADD SUPPORT IF YOU WANT */
-}
-
 .food_expiry {
   border-radius: 50%;
-  background-color: $color-button;
-  padding: 20px;
-  width: 40px;
-  height: 40px;
-  opacity: 0.9;
+  background-color: $color-button-light;
+  padding: 20px 0 20px 0;
+  width: 60px;
+  height: 20px;
+  opacity: 0.8;
   position: relative;
-  line-height: 40px;
-  text-align: center;
+  line-height: 20px;
   font-size: 15px;
   color: white;
-  bottom: 10px;
 }
 
 .food_title {
@@ -124,14 +113,100 @@ body {
   font-size: 20px;
   text-align: left;
   padding-left: 20px;
+}
+
+/* BUTTONS and LINKS */
+
+.plus_button {
+  border-radius: 50%;
+  background-color: $color-button;
+  padding: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 20px;
+  color: white;
+  box-shadow: 0 0 5px $color-shadow;
+}
+
+.plus_link {
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 8px;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  line-height: 19px;
+  color: white;
+  margin-right: 20px;
+}
+
+.recipe_link, {
+  width: 30px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.donate_link {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.profile_link {
+  border-radius: 50%;
+  position: relative;
+  color: white;
+  height: 80px;
+  width: 80px;
+  margin-right: 20px;
+  border: 3px solid white;
+}
+
+.recipe_button {
+  width: 40px;
+  height: 50px;
+  background-color: blue;
+}
+
+.other_buttons {
+  background-color: green;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.donate_button, .done_button, .trash_button {
+  width: 40px;
+  height: 40px;
+  padding: 0 20px 0 20px;
+}
+
+.donate_button {
   
 }
+
+.done_button {
+  
+}
+
+.trash_button {
+  
+}
+
 /*overlays for images*/
 
 .expired,.soon,.indate {
   //opacity: 0.3;
-  
 }
+
 .expired {
   background-color: #dd3322;
 }
@@ -144,45 +219,71 @@ body {
   background-color: #78a425;
 }
 
-/* STUFF */
+ /*PROFILE*/
 
-/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
 }
 
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-
-//	position: absolute;
-//	top: 0;
-//	left: 0;
+.avatar {
+  border-radius: 50%;
+  width: 10%;
+  height: 10%;
+  box-shadow: 0 0 5px $color-shadow;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+.name {
+  text-align: center;
 }
 
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
+.info {
+  text-align: center;
 }
 
+.row {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  // margin: 0.5em 0;
+  // float: left;
+  clear: both;
+  
+  background: transparent;
+    
+    i {
+      color: $color-main;
+      border: 2px solid $color-main;
+      border-radius: 50%;
+      padding: 1em;
+      position: relative;
+      background: transparent;
+      cursor: pointer;
+      display: inline-block;
+      // @include transition(all 0.15s ease)
+    }
+      
+      i:hover {
+         background: $color-main;
+         color: white;
+         top: -2px;
+      }
+      
+      i:not(:first-child){
+         margin-left: 1em; 
+      }
+}
+
+.icon-facebook {
+  
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}

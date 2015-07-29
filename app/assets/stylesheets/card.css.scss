@@ -1,0 +1,93 @@
+/*PREQUISITES*/
+$color-main: #568203;
+$color-main-dark: #235000;
+$color-main-light: #78a425;
+$color-button: #3d4F55;
+$color-button-dark: #1b2d33;
+$color-button-light: #5f6f77;
+$color-shadow: #666;
+$color-subtitle: #0B3142;
+$lato: 'Lato', sans-serif;
+
+
+.card {
+  background-color: #fafafa;
+  /* put bg-images here neen :) */
+  padding: 20px;
+  margin-top: 10px;
+  height: 60px;
+  box-shadow: 0 0 5px $color-shadow; /* ADD SUPPORT IF YOU WANT */
+}
+
+/* Styling for front/back card */
+
+.front, .back {
+	backface-visibility: hidden;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+	display: flex;
+  justify-content: flex-start;
+   flex-direction: row;
+}
+
+.back {
+	transform: rotateX(180deg);
+	z-index:2;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	
+	margin-top: -60px;
+}
+
+
+
+.recipe_button {
+  width: 40px;
+  height: 50px;
+  background-color: blue;
+}
+
+.other_buttons {
+  background-color: green;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.donate_button, .done_button, .trash_button {
+  width: 40px;
+  height: 40px;
+  padding: 0 20px 0 20px;
+}
+
+.donate_button {
+  
+}
+
+.done_button {
+  
+}
+
+.trash_button {
+  
+}
+/* Card animation */
+
+.flip-container {
+	perspective: 1000;
+	position: relative;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateX(180deg);
+}
+
+.flipper {
+	transition: 1s;
+	transform-style: preserve-3d;
+	position: relative;
+}

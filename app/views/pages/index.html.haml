@@ -1,27 +1,85 @@
-%div#menu
-  %div#plus_button +
+
 %div#content
 
   %div.pantry  
     %h1.subtitle Pantry
+    //<card>
+    %div.flip-container
+      %div.flipper.card.expired
+        %div.front
+          %div.food_expiry 0
+          %div.food_title Food Title
+        %div.back
+          %img.recipe_button{:src=>"/assets/recipe.png"}
+          %div.other_buttons
+            %img.donate_button{:src=>"/assets/donate.png"}
+            %img.done_button{:src=>"/assets/done.png"}
+            %img.trash_button{:src=>"/assets/trash.png"}
+    //</card>         
+    %div.flip-container
+      %div.flipper.card.soon
+        %div.front
+          %div.food_expiry 4
+          %div.food_title Food Title
+        %div.back
+        
+    %div.flip-container
+      %div.flipper.card.indate
+        %div.front
+          %div.food_expiry 365
+          %div.food_title Food Title
+        %div.back
+        
+    %div.plus_button +
+        
+  %div.fridge  
+    %h1.subtitle Fridge
     
     %div.flip-container
       %div.flipper.card.expired
         %div.front
-          %div.food_expiry - days
+          %div.food_expiry 0
           %div.food_title Food Title
         %div.back
-    
-    %div.card.soon soon
-    %div.card.indate indate
-  %div.fridge
-    
-    %h1.subtitle Fridge
-    %div.card.expired expired
-    %div.card.soon soon
-    %div.card.indate indate
-  %div.freezer
+        
+    %div.flip-container
+      %div.flipper.card.soon
+        %div.front
+          %div.food_expiry 4
+          %div.food_title Food Title
+        %div.back
+        
+    %div.flip-container
+      %div.flipper.card.indate
+        %div.front
+          %div.food_expiry 365
+          %div.food_title Food Title
+        %div.back
+        
+    %div.plus_button +
+  
+  %div.freezer 
     %h1.subtitle Freezer
-    %div.card.expired expired
-    %div.card.soon soon
-    %div.card.indate indate
+    
+    %div.flip-container
+      %div.flipper.card.expired
+        %div.front
+          %div.food_expiry 0
+          %div.food_title Food Title
+        %div.back
+        
+    %div.flip-container
+      %div.flipper.card.soon
+        %div.front
+          %div.food_expiry 4
+          %div.food_title Food Title
+        %div.back
+        
+    %div.flip-container
+      %div.flipper.card.indate
+        %div.front
+          %div.food_expiry 365
+          %div.food_title Food Title
+        %div.back
+        
+    %div.plus_button +

@@ -11,8 +11,14 @@
   
     %div.notice= notice
     %div.alert= alert
-    %div#header= image_tag("logo.png", id: "logo")
-    %div#footer Füd TM C Mayank and co.
+    %div#header
+      %img#logo{:src=>"/assets/logo.png"}
+      %div#menu
+        %div.plus_link +
+        %img.recipe_link{:src=>"/assets/recipe.png"}
+        %img.donate_link{:src=>"/assets/donate.png"}
+        %img.profile_link{:src=>"/assets/avatar.jpg"}
+      %div#footer Füd TM C Mayank and co.
     = yield
     
     
