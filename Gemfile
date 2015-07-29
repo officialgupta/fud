@@ -18,10 +18,10 @@ gem 'rails4-autocomplete'
 gem 'httparty'
 
 # Image suff
-# gem 'tesseract-ocr'
-# gem 'rmagick'
-# gem 'rtesseract'
-# gem "paperclip", "~> 4.3"
+gem 'tesseract-ocr'
+gem 'rmagick'
+gem 'rtesseract'
+gem "paperclip", "~> 4.3"
 gem 'spellingbee'
 
 # Use jquery as the JavaScript library
