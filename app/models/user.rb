@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :items
-
   has_many :recipes
+  has_many :list_items
 
   phony_normalize :phone, :default_country_code => 'UK'
 
