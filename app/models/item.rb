@@ -6,6 +6,7 @@ class Item < ActiveRecord::Base
   validates :status, inclusion: {in: ["in-use", "disposed", "donating", "donated", "used"]}
 
   before_validation :defaults, :set_when_expire, :set_where_stored
+  after_create :update_user_score
 
   scope :pantry, -> { where("(where_stored= 'Pantry') AND (status = 'in-use')").order('when_expire ASC') }
   scope :fridge, -> { where("(where_stored= 'Fridge') AND (status = 'in-use')").order('when_expire ASC')}
@@ -59,5 +60,10 @@ class Item < ActiveRecord::Base
 
   def defaults
     self.status ||= "in-use"
+    self.when_bought ||= Date.today
+  end
+
+  def update_user_score
+    self.user.save
   end
 end
