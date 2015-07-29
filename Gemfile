@@ -23,6 +23,7 @@ gem 'rmagick'
 gem 'rtesseract'
 gem "paperclip", "~> 4.3"
 gem 'spellingbee'
+gem 'flickr_fu'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,6 +31,7 @@ gem "jquery-ui-rails"
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

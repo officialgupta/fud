@@ -1,5 +1,5 @@
 %div.flip-container
-  %div.flipper.card.expired
+  %div.flipper.card{style: "background: linear-gradient(rgba(#{food_expiry_colour(item.expires_in)}, 0.55), rgba(#{food_expiry_colour(item.expires_in)}, 0.55)), url('#{item.food.image_url || 'http://suckhoevang.net/wp-content/uploads/che_do_an_theo_nhom_mau.jpg'}') no-repeat center center; background-size: cover"}
     %div.front
       %div.food_expiry
         = item.expires_in

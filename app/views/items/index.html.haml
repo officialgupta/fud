@@ -17,20 +17,5 @@
     %h1.subtitle Freezer
     - current_user.items.freezer.each do |item|
       = render "card", item: item
-    %div.plus_button +
-
--# %p#notice= notice
--# %h1 Listing Items
--# %table
--#   %thead
--#     %tr
--#       %th{:colspan => "3"}
--#   %tbody
--#     - @items.each do |item|
--#       %tr
--#         = item.food.name
--#         %td= link_to 'Show', item
--#         %td= link_to 'Edit', edit_item_path(item)
--#         %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }
--# %br/
--# = link_to 'New Item', new_item_path
+    %div.plus_button
+      +

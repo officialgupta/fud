@@ -1,4 +1,5 @@
 class Food < ActiveRecord::Base
+  require 'flickr_fu'
   has_many :items
   has_many :list_items
 
@@ -7,6 +8,15 @@ class Food < ActiveRecord::Base
   validates :name, uniqueness: true
 
   validates :name, :food_type, :where_stored, :time_to_expire_in_days, presence: true
+
+  before_validation :set_image_url
+
+  def set_image_url
+    puts "#{Rails.root}/config/flickr.yml"
+    flickr = Flickr.new("#{Rails.root}/config/flickr.yml", content_type: 1, media: "photo")
+    photos = flickr.photos.search(:tags => name.downcase.gsub(" ", "+"))
+    self.image_url = photos.first.url(:medium) unless photos.first.nil?
+  end
 
   def self.search(words)
     foods = Set.new
