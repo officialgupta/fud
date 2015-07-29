@@ -22,6 +22,7 @@ gem 'tesseract-ocr'
 gem 'rmagick'
 gem 'rtesseract'
 gem "paperclip", "~> 4.3"
+gem 'spellingbee'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
