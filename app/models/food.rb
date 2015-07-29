@@ -15,6 +15,15 @@ class Food < ActiveRecord::Base
       foods << where(['lower(name) LIKE ?', "%#{keyword.downcase}%"])
       foods << where(['lower(food_type) LIKE ?', "%#{keyword.downcase}%"])
     end
-    foods.first.uniq
+    foods = foods.first
+    dups = foods.group_by {|e| e}.select { |k,v| v.size > 1}.keys
+    foods -= dups
+    dups + foods
+  end
+
+  def self.from_ean(ean)
+    auth = {:username => "fe1f040131f9f3503d5afe14137ad067", :password => "test"}
+    response = HTTParty.get("https://api.outpan.com/v1/products/#{ean}", :basic_auth => auth)
+    self.search(response["name"]).first
   end
 end

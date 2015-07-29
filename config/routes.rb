@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get :autocomplete_food_name, :on => :collection
   end
   get '/items/new/search/:foods' => 'items#new'
+  get 'foodbanks/find' => 'foodbanks#find'
 
   get '/sms' => 'sms#receiving'
 

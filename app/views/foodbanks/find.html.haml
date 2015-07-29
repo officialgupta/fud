@@ -1,0 +1,14 @@
+%h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
+%ul
+  - @foodbanks.each do |foodbank|
+    %li
+      %h3
+        = "#{foodbank.name}, #{foodbank.county}"
+        %small= foodbank.company
+        %label
+          = foodbank.distance_to(@loc).round(1)
+          miles from your
+          = @home ? 'home' : 'location'
+      %p= foodbank.contact
+
+%small= link_to "Not at home? Click here to find your location by GPS.", "#", id: "gps-link"
