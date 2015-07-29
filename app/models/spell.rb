@@ -36,7 +36,7 @@ class Spell
     result.empty? ? nil : result
   end
 
-  def self.know(words)
+  def self.known(words)
     result = words.find_all {|w| nwords.has_key?(w) }
     result.empty? ? nil : result
   end

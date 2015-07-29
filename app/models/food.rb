@@ -25,4 +25,14 @@ class Food < ActiveRecord::Base
     response = HTTParty.get("https://api.outpan.com/v1/products/#{ean}", :basic_auth => auth)
     self.search(response["name"]).first
   end
+
+  def self.from_image(image_path)
+    image = RTesseract.new(image_path)
+    text = Spell.correct_para(image.to_s)
+    if text.present?
+      self.search(text)
+    else
+      nil
+    end
+  end
 end

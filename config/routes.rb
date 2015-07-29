@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :photos
+
   resources :items do
     get :autocomplete_food_name, :on => :collection
   end
