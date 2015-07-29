@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
-  
+
   resources :photos
 
   resources :items do
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
+
   get ':name' => 'pages#show'
 
   # Example of regular route:
