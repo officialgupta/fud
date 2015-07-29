@@ -3,10 +3,16 @@ class Item < ActiveRecord::Base
   belongs_to :food
 
   validates :quantity_type, :quantity, :when_bought, :when_expire, :user_id, :food_id, presence: true
+  validates :status, inclusion: {in: ["in-use", "disposed", "donating", "donated", "used"]}
 
-  before_validation :set_when_expire
+  before_validation :set_when_expire, :set_where_stored, :defaults
 
-  before_validation :set_where_stored
+  scope :stored_in, ->(location) { where("where_stored=", location) }
+  scope :in_use, -> { where("status = in-use") }
+  scope :donating, -> { where("status = donating") }
+  scope :donated, -> { where("status = donated") }
+  scope :used, -> { where("status = used") }
+  scope :disposed, -> { where("status = disposed") }
 
   def set_when_expire
     self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days
@@ -43,5 +49,8 @@ class Item < ActiveRecord::Base
         Item.create!(:food_id => food.id, :quantity => 1, :quantity_type => "units", :when_bought => Date.today)
       end
     end
+
+  def defaults
+    status ||= "in-use"
   end
 end

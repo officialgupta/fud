@@ -1,5 +1,6 @@
 class Food < ActiveRecord::Base
   has_many :items
+  has_many :list_items
 
   has_and_belongs_to_many :recipes
 

@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20150729115811) do
     t.string   "where_stored"
   end
 
+  create_table "list_items", force: :cascade do |t|
+    t.integer  "foods_id"
+    t.integer  "users_id"
+    t.decimal  "quantity"
+    t.string   "quantity_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "photos", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at",         null: false
