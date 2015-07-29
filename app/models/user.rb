@@ -25,4 +25,11 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def avatar_url
+   default_url = "http://img2.wikia.nocookie.net/__cb20130607025329/creepypasta/images/3/38/Avatar-blank.jpg"
+   gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
+   "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=#{CGI.escape(default_url)}"
+ end
+
 end
