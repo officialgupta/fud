@@ -1,3 +1,4 @@
-%h1 New Item
+%h2 New Item
 = render 'form'
-= link_to 'Back', items_path
+%h2 Upload image of receipt for scanning 
+= render 'photos/form', :@photo => Photo.new
