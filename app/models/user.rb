@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   before_save :set_score
 
   def avatar_url
-    default_url = "#{root_url}images/guest.png"
+    default_url = "http://img2.wikia.nocookie.net/__cb20130607025329/creepypasta/images/3/38/Avatar-blank.jpg"
     gravatar_id = Digest::MD5.hexdigest(self.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=#{CGI.escape(default_url)}"
   end
