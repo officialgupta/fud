@@ -5,14 +5,16 @@ class Item < ActiveRecord::Base
   validates :quantity_type, :quantity, :when_bought, :when_expire, :user_id, :food_id, presence: true
   validates :status, inclusion: {in: ["in-use", "disposed", "donating", "donated", "used"]}
 
-  before_validation :set_when_expire, :set_where_stored, :defaults
+  before_validation :defaults, :set_when_expire, :set_where_stored
 
-  scope :stored_in, ->(location) { where("where_stored=", location) }
-  scope :in_use, -> { where("status = in-use") }
-  scope :donating, -> { where("status = donating") }
-  scope :donated, -> { where("status = donated") }
-  scope :used, -> { where("status = used") }
-  scope :disposed, -> { where("status = disposed") }
+  scope :pantry, -> { where("(where_stored= 'Pantry') AND (status = 'in-use')").order('when_expire ASC') }
+  scope :fridge, -> { where("(where_stored= 'Fridge') AND (status = 'in-use')").order('when_expire ASC')}
+  scope :freezer, -> { where("(where_stored= 'Freezer') AND (status = 'in-use')").order('when_expire ASC')}
+  scope :in_use, -> { where("status = 'in-use'") }
+  scope :donating, -> { where("status = 'donating'") }
+  scope :donated, -> { where("status = 'donated'") }
+  scope :used, -> { where("status = 'used'") }
+  scope :disposed, -> { where("status = 'disposed'") }
 
   def set_when_expire
     self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days
@@ -28,6 +30,10 @@ class Item < ActiveRecord::Base
 
   def expired_in?(days)
     Time.now + days.days > self.when_expire
+  end
+
+  def expires_in
+    (self.when_expire - Date.today).to_i
   end
 
   def self.sms(content, number)
@@ -52,6 +58,6 @@ class Item < ActiveRecord::Base
   end
 
   def defaults
-    status ||= "in-use"
+    self.status ||= "in-use"
   end
 end

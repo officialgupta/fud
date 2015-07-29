@@ -1,0 +1,14 @@
+%div.flip-container
+  %div.flipper.card.expired
+    %div.front
+      %div.food_expiry
+        = item.expires_in
+        d
+      %div.food_title= item.food.name
+    %div.back
+      %div.one_button
+        %img.recipe_button{:src=>"/assets/recipe.png"}
+      %div.other_buttons
+        %img.donate_button{:src=>"/assets/donate.png"}
+        %img.done_button{:src=>"/assets/done.png"}
+        %img.trash_button{:src=>"/assets/trash.png"}
