@@ -13,7 +13,10 @@ Rails.application.routes.draw do
 
   resources :recipes
   get '/items/new/search/:foods' => 'items#new'
-  get 'foodbanks/find' => 'foodbanks#find'
+
+  resources :foodbanks do
+    get 'find', on: :collection
+  end
 
   get '/sms' => 'sms#receiving'
 

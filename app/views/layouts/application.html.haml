@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Workspace
+    %title füd
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"}/
@@ -12,13 +12,14 @@
       %div.notice= notice
       %div.alert= alert
       %div#header
-        %img#logo{:src=>"/assets/logo.png"}
+        = link_to root_path do 
+          %img#logo{:src=>"/assets/logo.png"}
         %div#menu
           =link_to new_item_path, :class => "no-dec" do
             %div.plus_link +
           =link_to '#' do
             %img.recipe_link{:src=>"/assets/recipe.png"}
-          =link_to '#' do
+          =link_to find_foodbanks_path do
             %img.donate_link{:src=>"/assets/donate.png"}
           -if user_signed_in?
             =link_to edit_user_registration_path do
