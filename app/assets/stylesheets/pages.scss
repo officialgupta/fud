@@ -52,7 +52,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+
 }
 
 #footer {
@@ -76,6 +76,10 @@ body {
   margin-bottom: 40px;
 }
 
+.no-dec {
+  text-decoration: none;
+}
+
 .pantry, .fridge, .freezer {
   display: flex;
   width: 25%;
@@ -91,7 +95,7 @@ h1.subtitle {
 }
 
  /*NEENA IS DEFO THE UNCOOLIEST*/
- 
+
 /* CARD STYLING */
 
 .food_expiry {
@@ -146,18 +150,21 @@ h1.subtitle {
   line-height: 19px;
   color: white;
   margin-right: 20px;
+  margin-bottom: 12px;
 }
 
 .recipe_link, {
   width: 30px;
   height: 40px;
   margin-right: 20px;
+  margin-bottom: -8px;
 }
 
 .donate_link {
   width: 40px;
   height: 40px;
   margin-right: 20px;
+  margin-bottom: -8px;
 }
 
 .profile_link {
@@ -168,6 +175,7 @@ h1.subtitle {
   width: 80px;
   margin-right: 20px;
   border: 3px solid white;
+  margin-top: 18px;
 }
 
 .one_button {
@@ -242,12 +250,17 @@ h1.subtitle {
   margin-left: auto;
 }
 
+#error_explanation h2 {
+  font-size: 15pt;
+}
+
 .name {
   text-align: center;
 }
 
 .info {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .row {
@@ -257,9 +270,9 @@ h1.subtitle {
   // margin: 0.5em 0;
   // float: left;
   clear: both;
-  
+
   background: transparent;
-    
+
     i {
       color: $color-main;
       border: 2px solid $color-main;
@@ -271,20 +284,20 @@ h1.subtitle {
       display: inline-block;
       // @include transition(all 0.15s ease)
     }
-      
+
       i:hover {
          background: $color-main;
          color: white;
          top: -2px;
       }
-      
+
       i:not(:first-child){
-         margin-left: 1em; 
+         margin-left: 1em;
       }
 }
 
 .icon-facebook {
-  
+
 }
 
 .profile {

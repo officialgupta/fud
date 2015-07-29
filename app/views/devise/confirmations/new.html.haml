@@ -1,11 +1,11 @@
 %h2 Resend confirmation instructions
 = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
   = devise_error_messages!
-  .field
+  %p
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
 
-  .actions
+  %p
     = f.submit "Resend confirmation instructions"
 = render "devise/shared/links"

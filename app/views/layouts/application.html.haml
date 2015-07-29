@@ -8,15 +8,20 @@
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
   %body
-  
+
     %div.notice= notice
     %div.alert= alert
     %div#header
       %img#logo{:src=>"/assets/logo.png"}
       %div#menu
-        %div.plus_link +
-        %img.recipe_link{:src=>"/assets/recipe.png"}
-        %img.donate_link{:src=>"/assets/donate.png"}
-        %img.profile_link{:src=>"/assets/avatar.jpg"}
+        =link_to '#', :class => "no-dec" do
+          %div.plus_link +
+        =link_to '#' do
+          %img.recipe_link{:src=>"/assets/recipe.png"}
+        =link_to '#' do
+          %img.donate_link{:src=>"/assets/donate.png"}
+        -if user_signed_in?
+          =link_to edit_user_registration_path do
+            %img.profile_link{:src=>current_user.avatar_url}
       %div#footer Füd TM C Mayank and co.
     = yield
