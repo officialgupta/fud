@@ -5,17 +5,18 @@
     %h1.subtitle Pantry
     - current_user.items.pantry.each do |item|
       = render "card", item: item
-    %div.plus_button +
+    = link_to "#modal", class: "open-modal" do
+      %div.plus_button +
 
   %div.fridge
     %h1.subtitle Fridge
     - current_user.items.fridge.each do |item|
       = render "card", item: item
-    %div.plus_button +
-
+    = link_to "#modal", class: "open-modal" do
+      %div.plus_button +
   %div.freezer
     %h1.subtitle Freezer
     - current_user.items.freezer.each do |item|
       = render "card", item: item
-    %div.plus_button
-      +
+    = link_to "#modal", class: "open-modal" do
+      %div.plus_button +

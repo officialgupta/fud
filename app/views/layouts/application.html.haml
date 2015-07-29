@@ -12,10 +12,10 @@
       %div.notice= notice
       %div.alert= alert
       %div#header
-        = link_to root_path do 
+        = link_to root_path do
           %img#logo{:src=>"/assets/logo.png"}
         %div#menu
-          =link_to new_item_path, :class => "no-dec" do
+          = link_to "#modal", class: "open-modal" do
             %div.plus_link +
           =link_to '#' do
             %img.recipe_link{:src=>"/assets/recipe.png"}
@@ -26,3 +26,4 @@
               %img.profile_link{:src=>current_user.avatar_url}
     %div#footer Füd TM C Mayank and co.
     = yield
+    = render "items/add"

@@ -1,4 +1,4 @@
-= form_for(@item) do |f|
+= form_for(@item||= Item.new) do |f|
   - if @item.errors.any?
     #error_explanation
       %h2
@@ -24,4 +24,4 @@
 
     = f.hidden_field :status, :value => "in-use"
 
-    = f.submit, :class => "button"
+    = f.submit

@@ -1,7 +1,7 @@
 %div.flip-container
-  %div.flipper.card{style: "background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.35)), url('#{item.food.image_url}') no-repeat center center; background-size: cover"}
+  %div.flipper.card{style: "background: linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)), url('#{item.food.image_url}') no-repeat center center; background-size: cover"}
     %div.front
-      %div.food_expiry{style: "background: rgba(#{food_expiry_colour(item.expires_in)}, 0.75)"}
+      %div.food_expiry{style: "background: rgba(#{food_expiry_colour(item.expires_in)}, 0.85)"}
         = item.expires_in
         d
       %div.food_title= item.food.name
