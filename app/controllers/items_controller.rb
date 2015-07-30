@@ -93,6 +93,8 @@ class ItemsController < ApplicationController
       item.status = "donated"
       item.save
     end
+
+    redirect_to find_foodbanks_path
   end
 
   private
