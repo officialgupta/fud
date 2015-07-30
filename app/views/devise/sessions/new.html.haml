@@ -1,19 +1,24 @@
-%div.user
-  %div.info
-    %h2 Log in
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      %p
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true
-      %p
-        = f.label :password
-        %br/
-        = f.password_field :password, autocomplete: "off"
-      - if devise_mapping.rememberable?
+%div#content2.background
+
+  %img#big_logo{:src=>"/assets/logo.png"}
+  %p.subtitle2 füd for güd (lol)
+
+  %div.user
+    %div.info
+      %h2.subtitle3 Let's go!
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         %p
-          = f.check_box :remember_me
-          = f.label :remember_me
-      %p
-        = f.submit "Log in", :class => "button"
-    = render "devise/shared/links"
+          = f.label :email, class:"label"
+          %br/
+          = f.email_field :email, autofocus: true
+        %p
+          = f.label :password, class:"label"
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          %p
+            = f.check_box :remember_me
+            = f.label :remember_me
+        %p
+          = f.submit "Log in", class: "submit"
+      = render "devise/shared/links"

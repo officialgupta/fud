@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
 
   root 'items#index'
 
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   get '/scan' => 'scans#scan', :as => "scan"
 
   devise_for :users
+  get "/profile/:id" => 'users#show', :as => "profile"
 
   get ':name' => 'pages#show'
 

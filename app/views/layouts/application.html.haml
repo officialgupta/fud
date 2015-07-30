@@ -4,10 +4,15 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title füd
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %script{:async => "", :defer => "", :src => "https://apis.google.com/js/platform.js"}
+      {lang: 'en-GB'}
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
-  %body
+    = yield :head
+    %script{:src => "Chart.js"}
+  %body{id: (controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew" ) ? "" : "full-background"}
     -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
       %div.notice= notice
       %div.alert= alert
@@ -24,6 +29,6 @@
           -if user_signed_in?
             =link_to edit_user_registration_path do
               %img.profile_link{:src=>current_user.avatar_url}
-    %div#footer Füd TM C Mayank and co.
+    %div#footer Füd retain all rights to Füd despite what happened in 2012 | #FoC2015 | Team Hypertext: @_emmacorlett @officialgupta @ThisIsNeena @JoelMayer286
     = yield
     = render "items/add"

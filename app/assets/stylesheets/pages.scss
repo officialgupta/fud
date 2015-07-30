@@ -1,26 +1,6 @@
 /*PREQUISITES*/
-$color-main: #568203;
-$color-main-dark: #235000;
-$color-main-light: #78a425;
-$color-button: #3d4F55;
-$color-button-dark: #1b2d33;
-$color-button-light: #5f6f77;
-$color-shadow: #666;
-$color-subtitle: #0B3142;
-$lato: 'Lato', sans-serif;
-$comfortaa: 'Comfortaa', sans-serif;
 
-@import url(http://fonts.googleapis.com/css?family=Lato);
-@import url(https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css);
-@import url(http://fonts.googleapis.com/css?family=Comfortaa);
-
-$facebook:   #3b5998;
-$twitter:    #00a0d1;
-$gplus:      #db4a39;
-$pinterest:  #c8232c;
-$dribbble:   #ea4c89;
-$navy: #34495e;
-
+@import "prequisites";
 
 /*MAIN*/
 
@@ -68,6 +48,7 @@ body {
   text-align: center;
   box-shadow: 0 0 5px $color-shadow;
   z-index: 4;
+  font-size: 10px;
 }
 
 #content {
@@ -231,7 +212,7 @@ h1.subtitle {
 
  /*PROFILE*/
 
-.user {
+.user1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -256,7 +237,7 @@ h1.subtitle {
   text-align: center;
 }
 
-.info {
+.info1 {
   text-align: center;
   margin-bottom: 15px;
 }
@@ -301,6 +282,15 @@ h1.subtitle {
 .profile {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.stats {
+  order: 1;
+}
+
+.leaderboard {
+  order: 2;
 }
 
 
@@ -315,15 +305,15 @@ h1.subtitle {
     // min-height:600px;
     margin: 30px auto 0 auto;
     padding:3%;
-    float: right;
 }
 
 .leaderboard h1{
+    font-family: $lato;
     text-align: center;
     text-transform: uppercase;
     margin:30px;
     padding:0;
-    color: white;
+    color: $color-main;
 }
 
 .content {
@@ -331,22 +321,21 @@ h1.subtitle {
     width:70%;
     margin:3px auto 0 auto;
     min-width:300px;
-
 }
 
 .content ul{
     margin:0;
     padding:0;
     list-style: none;
-    border:5px solid $color-main-dark;
-    background-color: $color-main;
+    border:5px solid $color-button;
+    background-color: $color-button-light;
 }
 .content ul li{
     position: relative;
     color: white;
     font-family: $lato;
     padding:2% 5%;
-    border-bottom: 1px solid $color-main-dark;
+    border-bottom: 1px solid $color-button;
 }
 
 .content ul li:last-child{
@@ -363,7 +352,7 @@ h1.subtitle {
     font-weight:bold;
 }
 .count:after{
-    content:' Likes';
+    content:' Points';
     color: white;
     font-size:80%;
     font-weight:normal;
@@ -419,3 +408,16 @@ h1.subtitle {
      80% {transform: rotate(10deg)}
      100% {transform: rotate(-10deg)}
  }
+
+.share-link {
+  margin-left: 15px;
+}
+
+.share-icon {
+  height: 13px !important;
+}
+
+.share-icon-exep {
+  height: 13px !important;
+  width: 13px !important;
+}

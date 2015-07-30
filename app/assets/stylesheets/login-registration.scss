@@ -1,0 +1,98 @@
+
+@import "prequisites";
+
+#content2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+#full-background {
+  background: 
+  linear-gradient(
+    rgba(50, 50, 50, 0.6), 
+    rgba(50, 50, 50, 0.6)
+  ),
+  url("/assets/background.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+#big_logo {
+  width:25%;
+  height:25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subtitle2 {
+  font-family: $comfortaa;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  color: white;
+}
+
+.user {
+  background-color: rgba(50,50,50, 0.6);
+  padding: 20px 80px 20px 80px;
+  margin-bottom: 50px;
+  
+}
+.user, .info {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+
+.subtitle3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.submit {
+  border-radius: 20px;
+  background-color: $color-button;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  box-shadow: 0 0 5px $color-shadow;
+  border: none;
+  
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+input {
+  border-radius: 20px;
+  border: 3px solid $color-button;
+  cursor: none;
+  padding: 3px;
+}
+
+.label {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+@-webkit-keyframes greenPulse {
+  from { background-color: $color-main; -webkit-box-shadow: 0 0 5px #333; }
+  50% { background-color: #color-main-light; -webkit-box-shadow: 0 0 3px #91bd09; }
+  to { background-color: $color-main; -webkit-box-shadow: 0 0 5px #333; }
+}
+
+.user a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
