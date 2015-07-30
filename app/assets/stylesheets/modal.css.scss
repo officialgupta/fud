@@ -1,0 +1,28 @@
+.modal-wrap {
+  &:before {
+    content: "";
+    background: rgba(0,0,0,0.6);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  // Closed
+  &.closed {
+    display: none;
+  }
+}
+.modal {
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  display: block;
+  background: #fff;
+  padding: 50px;
+  width: 600px;
+  max-width: 100%;
+}
