@@ -26,7 +26,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   get "/profile/:id" => 'users#show', :as => "profile"
-
+  
+  get "/points/:name" => 'users#points'
   get ':name' => 'pages#show'
 
 end
