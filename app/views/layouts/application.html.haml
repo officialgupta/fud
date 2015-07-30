@@ -28,7 +28,7 @@
           =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
             %img.donate_link{:src=>"/assets/donate.png"}
           -if user_signed_in?
-            =link_to edit_user_registration_path do
+            =link_to profile_path(id: current_user.id) do
               %img.profile_link{:src=>current_user.avatar_url}
     %div#footer Füd retain all rights to Füd despite what happened in 2012 | #FoC2015 | Team Hypertext: @_emmacorlett @officialgupta @ThisIsNeena @JoelMayer286
     = yield
