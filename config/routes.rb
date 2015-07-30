@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'use', on: :member
     get 'dispose', on: :member
     get 'donate', on: :member
+    get 'donated', on: :collection
   end
 
   resources :recipes
@@ -25,8 +26,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   get "/profile/:id" => 'users#show', :as => "profile"
+  
   get "/points/:name" => 'users#points'
-
   get ':name' => 'pages#show'
 
 end
