@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729115811) do
+ActiveRecord::Schema.define(version: 20150729125622) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150729115811) do
     t.float    "longitude"
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "score"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

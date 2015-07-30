@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   root 'pages#index'
-  
+
   resources :photos
 
   resources :items do
@@ -14,13 +16,16 @@ Rails.application.routes.draw do
   get '/scan' => 'scans#scan', :as => "scan"
 
   devise_for :users
+  get "/profile/:id" => 'users#show', :as => "profile"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
+
   get ':name' => 'pages#show'
+
+  get "/pages/:name" => "pages#show"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

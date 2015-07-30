@@ -865,7 +865,7 @@ projects
 lyrics
 often
 subscribe
-submit
+submit :class => "button"
 germany
 amount
 watch
@@ -1606,7 +1606,7 @@ rape
 battery
 youth
 pressure
-submitted
+submit :class => "button"ted
 boston
 incest
 debt
@@ -7933,7 +7933,7 @@ appraisal
 consisting
 maritime
 periodic
-submitting
+submit :class => "button"ting
 overhead
 ascii
 prospect

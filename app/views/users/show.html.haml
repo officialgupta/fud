@@ -1,0 +1,29 @@
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
+    document.getElementsByClassName("fb-share-button").innerHTML = "<i class="icon-facebook"></i>";
+    document.getElementsByClassName("pluginShareButtonLink").className = "";
+  }(document, 'script', 'facebook-jssdk'));
+
+%div.user
+  %img.avatar{:src => @user.avatar_url}
+  %h2.name=@user.full_name
+  %div.info
+    %div.row
+      %a.no-dec#facebook_share{:href => "https://www.facebook.com/sharer/sharer.php?u=fudyrs.me/profile/#{request.original_url}"}
+        %i.share-icon-exep.fa.fa-facebook
+      %a.no-dec.share-link{:href => "https://twitter.com/intent/tweet?original_referer=#{request.original_url};ref_src=twsrc%5Etfw&amp;text=F%C3%BCd%20is%20g%C3%BCd.%20Check%20it%20out%20now!&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Ffudyrs.me%2F"}
+        %i.share-icon.fa.fa-twitter
+      %a.no-dec.share-link{:href => "https://plus.google.com/share?url=#{request.original_url}"}
+        %i.share-icon.fa.fa-google-plus
+      %a.no-dec.share-link.pin-it-button{"count-layout" => "horizontal", :href => "http://pinterest.com/pin/create/button/?url=#{request.original_url}&media=http://ontv.uk.com/wp-content/uploads/2015/06/Good-Food-Guide-editor-calls-for-more-veggie-options-on-pub-menus.jpg"}
+        %i.share-icon.fa.fa-pinterest
+  %div.profile
+    %div.stats
+    %div.leaderboard
+      %div.content

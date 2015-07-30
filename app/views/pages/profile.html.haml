@@ -1,3 +1,15 @@
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
+    document.getElementsByClassName("fb-share-button").innerHTML = "<i class="icon-facebook"></i>";
+    document.getElementsByClassName("pluginShareButtonLink").className = "";
+  }(document, 'script', 'facebook-jssdk'));
+
 %div.user1
   %img.avatar{:src => "/assets/avatar.jpg"}
   %h2.name Shawn Tok
@@ -7,10 +19,14 @@
     %p.ethnicity Chinese
     %p.sexual-orientation Straight
     %div.row
-      %i.icon-facebook>
-      %i.icon-twitter>
-      %i.icon-googleplus>
-      %i.icon-pinterest>
+      %a#facebook_share{:href => "https://www.facebook.com/sharer/sharer.php?u=fudyrs.me"}
+        %i.icon-facebook>
+      %a.share-link{:href => "https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flocalhost%3A3000%2Fpages%2Fprofile&amp;ref_src=twsrc%5Etfw&amp;text=F%C3%BCd%20is%20g%C3%BCd.%20Check%20it%20out%20now!&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Ffudyrs.me%2F"}
+        %i.icon-twitter>
+      %a.share-link{:href => "https://plus.google.com/share?url=http%3A%2F%2fudyrs.com"}
+        %i.icon-googleplus>
+      %a.share-link.pin-it-button{"count-layout" => "horizontal", :href => "http://pinterest.com/pin/create/button/?url=http://fudyrs.me&media=http://ontv.uk.com/wp-content/uploads/2015/06/Good-Food-Guide-editor-calls-for-more-veggie-options-on-pub-menus.jpg"}
+        %i.icon-pinterest>
   %div.profile
     %div.stats
       %canvas#chart-area{:height => "400", :width => "400"}
@@ -200,4 +216,3 @@
     $(document).ready(function ($) {
     var myLeaderboard = new Leaderboard(".content", {limit:8,frequency:8});
     });
-    
