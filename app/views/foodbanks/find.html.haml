@@ -9,6 +9,22 @@
           = foodbank.distance_to(@loc).round(1)
           miles from your
           = @home ? 'home' : 'location'
+      %h4
+        = "This will cost you #{@uber_prices[foodbank.id][0].estimate} by #{@uber_prices[foodbank.id][0].display_name} from #{@home ? 'home' : 'here'}"
+        |
+        = link_to "Google Maps Directions", "https://www.google.com/maps/dir/Current+Location/#{foodbank.latitude},#{foodbank.longitude}", target: "_blank"
       %p= foodbank.contact
 
+I am donating
+%ul
+  - current_user.items.donating.each do |item|
+    %li= item.food.name
+
+= link_to "Click here when you have donated these items!", donated_items_path
+%br
 %small= link_to "Not at home? Click here to find your location by GPS.", "#", id: "gps-link"
+
+%br
+%br
+%br
+%br

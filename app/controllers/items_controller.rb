@@ -88,6 +88,13 @@ class ItemsController < ApplicationController
     redirect_to items_url
   end
 
+  def donated
+    current_user.items.donating.each do |item|
+      item.status = "donated"
+      item.save
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
