@@ -14,18 +14,10 @@ class FoodbanksController < ApplicationController
 
     @foodbanks = Foodbank.within(@distance, origin: @loc).sort_by{|f| f.distance_to(@loc)}
 
-    # client = ::Uber::Client.new do |config|
-    #   config.server_token  = "ZN5dZ9KK0SeBdFpc2Hg0pRPWCDgtBF9JbajeIS5-"
-    # end
-    #
-    # @uber_prices = @foodbanks.inject({}) do |hash, foodbank|
-    #   hash[foodbank.id] = client.price_estimations(start_latitude: @loc[0], start_longitude: @loc[1],
-    #                        end_latitude: foodbank.latitude, end_longitude: foodbank.longitude)
-    #   hash
-    # end
   end
 
-  def location
+  def show
     @foodbank = Foodbank.find(params[:id])
+    @loc = params[:loc]
   end
 end
