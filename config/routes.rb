@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   get "/points/:name" => 'users#points'
   get ':name' => 'pages#show'
 
+  get "/page/:name" => "pages#show"
+
 end

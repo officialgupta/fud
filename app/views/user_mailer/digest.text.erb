@@ -1,1 +1,10 @@
-Füd digest goes here!
+Your Weekly Füd Digest:
+<% @user.items.select{|i| i.expired_in?(7)}.each do |item| %>
+  <% if item.expires_in > 0 %>
+    <% exp = " expires in #{item.expires_in} days" %>
+  <% elsif item.expires_in < 0
+    <% exp = "expired #{0 - item.expires_in} days ago" %>
+  <% else %>
+    <% exp = "expires today!" %>
+  Your <%= item.food.name.downcase %> <%= exp %>
+<% end %>

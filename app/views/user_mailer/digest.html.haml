@@ -1,4 +1,11 @@
-Weekly Füd Digest goes here!
-%ul
+%div.user1
+
+  %h2 Your Weekly Füd Digest:
   - @user.items.select{|i| i.expired_in?(7)}.each do |item|
-    %li= "Your #{item.food.name.downcase} expire in #{item.expires_in} days!"
+    -if item.expires_in > 0
+      -exp = " expires in #{item.expires_in} days"
+    -elsif item.expires_in < 0
+      -exp = "expired #{0 - item.expires_in} days ago"
+    -else
+      -exp = "expires today!"
+    %li= "Your #{item.food.name.downcase} #{exp}"
