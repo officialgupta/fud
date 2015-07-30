@@ -1,5 +1,5 @@
 %div.flip-container
-  %div.flipper.card{style: "background: linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)), url('#{item.food.image_url}') no-repeat center center; background-size: cover"}
+  %div.flipper.card{style: "background: linear-gradient(rgba(50,50,50,0.40), rgba(50,50,50,0.40)), url('#{item.food.image_url}') no-repeat center center; background-size: cover"}
     %div.front
       %div.food_expiry{style: "background: rgba(#{food_expiry_colour(item.expires_in)}, 0.85)"}
         = item.expires_in

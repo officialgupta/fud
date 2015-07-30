@@ -19,7 +19,7 @@
             %div.plus_link +
           =link_to '#' do
             %img.recipe_link{:src=>"/assets/recipe.png"}
-          =link_to find_foodbanks_path do
+          =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
             %img.donate_link{:src=>"/assets/donate.png"}
           -if user_signed_in?
             =link_to edit_user_registration_path do
