@@ -198,17 +198,15 @@ h1.subtitle {
   //opacity: 0.3;
 }
 
-.expired {
-  background-color: #dd3322;
-}
-
-.soon {
-  background-color: #ffaa22;
-}
-
-.indate {
-  background-color: #78a425;
-}
+//.expired {
+  //background-color: #dd3322;
+//}
+//.soon {
+  //background-color: #ffaa22;
+//}
+//.indate {
+  //background-color: #78a425;
+//}
 
  /*PROFILE*/
 
@@ -334,7 +332,7 @@ h1.subtitle {
     position: relative;
     color: white;
     font-family: $lato;
-    padding:2% 5%;
+    padding: 5%;
     border-bottom: 1px solid $color-button;
 }
 
