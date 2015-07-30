@@ -10,7 +10,7 @@
           miles from your
           = @home ? 'home' : 'location'
       %h4
-        = "This will cost you #{@uber_prices[foodbank.id][0].estimate} by #{@uber_prices[foodbank.id][0].display_name} from #{@home ? 'home' : 'here'}"
+        -# = "This will cost you #{@uber_prices[foodbank.id][0].estimate} by #{@uber_prices[foodbank.id][0].display_name} from #{@home ? 'home' : 'here'}"
         |
         = link_to "Google Maps Directions", "https://www.google.com/maps/dir/Current+Location/#{foodbank.latitude},#{foodbank.longitude}", target: "_blank"
       %p= foodbank.contact

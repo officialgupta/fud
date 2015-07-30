@@ -12,7 +12,7 @@
       %div.other_buttons
         = link_to donate_item_path(item) do
           %img.donate_button{:src=>"/assets/donate.png"}
-        = link_to use_item_url(item) do
+        = link_to use_item_path(item) do
           %img.done_button{:src=>"/assets/done.png"}
-        = link_to dispose_item_url(item)  do
+        = link_to dispose_item_path(item)  do
           %img.trash_button{:src=>"/assets/trash.png"}
