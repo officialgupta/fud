@@ -36,6 +36,8 @@ gem 'uber-ruby', require: 'uber'
 
 gem 'geocoder'
 gem 'geokit-rails'
+gem 'whenever'
+gem 'actionmailer', :require => false
 
 group :development, :test do
   gem 'byebug'
