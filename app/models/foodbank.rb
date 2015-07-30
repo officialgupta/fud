@@ -6,6 +6,10 @@ class Foodbank < ActiveRecord::Base
                    :lng_column_name => :longitude
 
   def address
-    "#{name}, #{county}, UK"
+    regex = /[A-Z]+[0-9]+\s[0-9]+[A-Z]+/
+    if regex.match(contact)
+      postcode = ", #{regex.match(contact)[0]}"
+    end
+    "#{name}, #{county}, UK#{postcode}"
   end
 end
