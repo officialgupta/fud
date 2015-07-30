@@ -9,6 +9,8 @@ gem 'clockworksms'
 gem 'phony_rails'
 gem 'haml'
 
+gem 'pg'
+
 gem 'html2haml'
 gem 'devise'
 gem 'chronic_duration'
