@@ -1,1 +1,14 @@
-// Recipes page goes here
+%ul
+  - @recipes.each  do |recipe|
+    %li
+      %h3
+        = link_to recipe.name, recipe_path(id:recipe.id)
+        %small= "#{recipe.cuisine} cuisine"
+      %p= recipe.ingredients.join(", ")
+      = image_tag(recipe.thumb)
+
+= link_to "Next page", recipes_path(page: @page + 1, ingredients: @ingredients)
+
+
+%br
+%br
