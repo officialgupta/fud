@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get "/profile/:id" => 'users#show', :as => "profile"
+  get "/points/:name" => 'users#points'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
