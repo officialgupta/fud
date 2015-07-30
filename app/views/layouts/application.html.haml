@@ -23,6 +23,8 @@
           = link_to "#modal", class: "open-modal" do
             %div.plus_link +
           =link_to '#' do
+            %img.dashboard_link{:src=>"/assets/dashboard_link"}
+          =link_to '#' do
             %img.recipe_link{:src=>"/assets/recipe.png"}
           =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
             %img.donate_link{:src=>"/assets/donate.png"}
