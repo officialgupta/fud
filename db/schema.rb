@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729154156) do
+ActiveRecord::Schema.define(version: 20150729125622) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150729154156) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "where_stored"
-    t.string   "image_url"
   end
 
   create_table "foods_recipes", force: :cascade do |t|
