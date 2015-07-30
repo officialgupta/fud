@@ -1,7 +1,7 @@
   u = User.first
 
  20.times do
-   i = Item.new(food: Food.find(rand(1..Food.all.count)),
+   i = Item.new(food_id: Food.order("RANDOM()").first.id,
                user: u,
                quantity: rand(10),
                quantity_type: ["kg", "units", "g", "l"].sample,

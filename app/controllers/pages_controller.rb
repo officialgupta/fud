@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
-    def index
-        
-    end
-    
-    def show
-       render "pages/#{params[:name]}" 
-    end
+  def index
+
+  end
+
+  def show
+    @user = User.first
+    render "pages/#{params[:name]}"
+  end
 end

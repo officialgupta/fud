@@ -30,6 +30,10 @@ class Item < ActiveRecord::Base
   end
 
   def expired_in?(days)
+    !self.expired? && expired_by?(days)
+  end
+
+  def expired_by?(days)
     Time.now + days.days > self.when_expire
   end
 

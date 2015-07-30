@@ -4,7 +4,7 @@
       %div.food_expiry{style: "background: rgba(#{food_expiry_colour(item.expires_in)}, 0.85)"}
         = item.expires_in
         d
-      %div.food_title= item.food.name
+      %div.food_title= item.food.name.truncate(20)
     %div.back
       %div.one_button
         = link_to recipes_url(ingredients: [item.food]) do
