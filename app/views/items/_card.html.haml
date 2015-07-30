@@ -7,7 +7,7 @@
       %div.food_title= item.food.name
     %div.back
       %div.one_button
-        = link_to recipes_url do
+        = link_to recipes_url(ingredients: [item.food]) do
           %img.recipe_button{:src=>"/assets/recipe.png"}
       %div.other_buttons
         = link_to donate_item_path(item) do
