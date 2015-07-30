@@ -1,3 +1,12 @@
+:javascript
+  $(document.body).on('click', ".ui-menu-item", function(e) {
+  $(".modal-wrap").addClass("force-open");
+  })
+
+  $(document.body).on('click', ".modal-wrap", function(e) {
+  $(".modal-wrap").removeClass("force-open");
+  })
+
 #modal.modal-wrap.closed
   .modal
     %h2 Add New Item
