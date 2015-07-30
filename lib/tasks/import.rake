@@ -1,5 +1,6 @@
 require 'csv'
 require 'chronic_duration'
+require 'json'
 
 namespace :import do
   desc "TODO"
@@ -97,4 +98,21 @@ namespace :import do
       end
     end
   end
+
+  task recipes: :environment do
+    Recipe.delete_all
+    Food.all.each do |food|
+      response = HTTParty.get("http://food2fork.com/api/search?key=683198e85db6b8b99e433e685178bbd7&q=#{food.name.split.first.encode('UTF-8', :invalid => :replace)}")
+      data = response.parsed_response
+      if data.present?
+        JSON.parse(data)["recipes"].each do |r|
+          puts r.to_hash["title"]
+          recipe = Recipe.new(name: r.to_hash["title"], url: r.to_hash["source_url"])
+          recipe.foods << Food.search(r.to_hash["title"])
+          recipe.save
+        end
+      end
+    end
+  end
+
 end

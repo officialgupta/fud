@@ -1,29 +1,38 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :postcode
-    %br/
-    = f.text_field :postcode
-  .field
-    = f.label :phone
-    %br/
-    = f.text_field :phone
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+%div#content2#full-background
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    %div.info
+      %h2.subtitle3 Just DO it!
+      = devise_error_messages!
+      %p
+        = f.label :email, class:"label"
+        %br/
+        = f.email_field :email, autofocus: true
+      %p
+        = f.label :first_name, class:"label"
+        %br/
+        = f.text_field :first_name
+      %p
+        = f.label :last_name, class:"label"
+        %br/
+        = f.text_field :last_name
+      %p
+        = f.label :postcode, class:"label"
+        %br/
+        = f.text_field :postcode
+      %p
+        = f.label :phone, class:"label"
+        %br/
+        = f.text_field :phone
+      %p
+        = f.label :password, class:"label"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      %p
+        = f.label :password_confirmation, class:"label"
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+      %p
+        = f.submit "Sign up", class: "submit"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728105736) do
+ActiveRecord::Schema.define(version: 20150729154156) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150728105736) do
     t.datetime "updated_at", null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.float    "distance"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -31,6 +32,12 @@ ActiveRecord::Schema.define(version: 20150728105736) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "where_stored"
+    t.string   "image_url"
+  end
+
+  create_table "foods_recipes", force: :cascade do |t|
+    t.integer "food_id"
+    t.integer "recipe_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -44,6 +51,34 @@ ActiveRecord::Schema.define(version: 20150728105736) do
     t.datetime "updated_at",    null: false
     t.string   "status"
     t.string   "where_stored"
+  end
+
+  create_table "list_items", force: :cascade do |t|
+    t.integer  "foods_id"
+    t.integer  "users_id"
+    t.decimal  "quantity"
+    t.string   "quantity_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "instructions"
+    t.integer  "user_id"
+    t.string   "url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,6 +98,9 @@ ActiveRecord::Schema.define(version: 20150728105736) do
     t.string   "phone"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "score"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

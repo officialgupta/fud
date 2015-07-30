@@ -1,0 +1,19 @@
+:javascript
+  $(document.body).on('click', ".ui-menu-item", function(e) {
+  $(".modal-wrap").addClass("force-open");
+  })
+
+  $(document.body).on('click', ".modal-wrap", function(e) {
+  $(".modal-wrap").removeClass("force-open");
+  })
+
+#modal.modal-wrap.closed
+  .modal
+    %h2 Add New Item
+    - if request.env['HTTP_USER_AGENT'].downcase.match(/android/)
+      %h3 Scan a barcode
+      = link_to "Scan a barcode", "zxing://scan/?ret=#{u scan_url}%2F%7BCODE%7D&SCAN_FORMATS=UPC_A,EAN_13"
+    %h3 Upload image of receipt for scanning
+    = render 'photos/form', :@photo => Photo.new
+    %h3 Enter food manually
+    = render "items/form"

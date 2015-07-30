@@ -1,0 +1,55 @@
+
+@import "prequisites";
+
+
+.card {
+  background-color: #fafafa;
+  /* put bg-images here neen :) */
+  padding: 20px;
+  margin-top: 10px;
+  height: 60px;
+  box-shadow: 0 0 5px $color-shadow; /* ADD SUPPORT IF YOU WANT */
+}
+
+/* Styling for front/back card */
+
+.front, .back {
+	backface-visibility: hidden;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+	display: flex;
+  justify-content: flex-start;
+   flex-direction: row;
+}
+
+.back {
+	transform: rotateX(180deg);
+	z-index:2;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: stretch;
+	//background-color: ;
+	
+	margin-top: -55px;
+}
+
+/* Card animation */
+
+.flip-container {
+	perspective: 1000;
+	position: relative;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateX(180deg);
+}
+
+.flipper {
+	transition: 1s;
+	transform-style: preserve-3d;
+	position: relative;
+}
