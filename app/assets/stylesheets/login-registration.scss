@@ -93,7 +93,12 @@ input:focus, .submit:focus {
   to { background-color: $color-main; -webkit-box-shadow: 0 0 5px #333; }
 }
 
+a {
+  text-decoration: none;
+}
+
 .user a {
   color: white;
   font-size: 15px;
+  text-decoration: underline;
 }
