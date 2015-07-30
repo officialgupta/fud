@@ -137,6 +137,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.18.2)
     phony (2.14.13)
     phony_rails (0.12.9)
       activesupport (>= 3.0)
@@ -251,6 +252,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   paperclip (~> 4.3)
+  pg
   phony_rails
   rails (= 4.2.1)
   rails4-autocomplete
