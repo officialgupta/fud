@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'use', on: :member
     get 'dispose', on: :member
     get 'donate', on: :member
+    get 'donated', on: :collection
   end
 
   resources :recipes
