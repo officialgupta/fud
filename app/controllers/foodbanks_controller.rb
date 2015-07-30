@@ -2,7 +2,7 @@ class FoodbanksController < ApplicationController
   def find
     @distance = params[:distance] || 10
     @home = true unless params[:lat] && params[:lng]
-    @url = foodbanks_find_url
+    @url = find_foodbanks_path
     @latitude = params[:lat] unless @home
     @longitude = params[:lng] unless @home
 

@@ -8,7 +8,9 @@ class Item < ActiveRecord::Base
   before_validation :defaults, :set_when_expire, :set_where_stored
   after_create :update_user_score
 
-  scope :stored_in, ->(location) { where("where_stored=", location) }
+  scope :pantry, -> { where("(where_stored= 'Pantry') AND (status = 'in-use')").order('when_expire ASC') }
+  scope :fridge, -> { where("(where_stored= 'Fridge') AND (status = 'in-use')").order('when_expire ASC')}
+  scope :freezer, -> { where("(where_stored= 'Freezer') AND (status = 'in-use')").order('when_expire ASC')}
   scope :in_use, -> { where("status = 'in-use'") }
   scope :donating, -> { where("status = 'donating'") }
   scope :donated, -> { where("status = 'donated'") }
@@ -29,6 +31,10 @@ class Item < ActiveRecord::Base
 
   def expired_in?(days)
     Time.now + days.days > self.when_expire
+  end
+
+  def expires_in
+    (self.when_expire - Date.today).to_i
   end
 
   def self.sms(content, number)
