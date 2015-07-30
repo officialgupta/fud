@@ -1,7 +1,7 @@
 %div.user1
 
   %h2 Your Weekly Füd Digest:
-  - @user.items.select{|i| i.expired_in?(7)}.each do |item|
+  - @user.items.select{|i| i.expired_by?(7)}.each do |item|
     -if item.expires_in > 0
       -exp = " expires in #{item.expires_in} days"
     -elsif item.expires_in < 0
