@@ -5,15 +5,17 @@
   %div.location  
     %ul.banklist
       - @foodbanks.each do |foodbank|
-        %li
-          %h3.bankname
-            = link_to foodbank_path(id: foodbank.id, loc: @loc) do
-              = "#{foodbank.name}, #{foodbank.county}"
-              %small= foodbank.company
-            %p
-              = foodbank.distance_to(@loc).round(1)
-              miles from your
-              = @home ? 'home' : 'location'
+        %li.bankname
+          %div.banklink
+            = link_to(foodbank_path( id: foodbank.id, loc: @loc)) do
+              %div.bankname
+                = "#{foodbank.name}, #{foodbank.county}"
+                %small
+                  = foodbank.company
+              %p
+                = foodbank.distance_to(@loc).round(1)
+                miles from your
+                = @home ? 'home' : 'location'
 
 You are donating:
 %ul

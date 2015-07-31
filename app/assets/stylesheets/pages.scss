@@ -464,7 +464,7 @@ h1.subtitle {
   flex-direction: column;
 }
 
-.bankname {
+.bank {
   background-color: $color-main-light;
   width: 50%;
   box-shadow: 0 0 5px $color-shadow;
@@ -474,6 +474,14 @@ h1.subtitle {
   padding-right: 50px;
   padding-left: 50px;
 }
+
+// .banklink {
+//   font-size: 30pt;
+// }
+
+// .bankname {
+//   font-size: 30pt;
+// }
 
 #gps-link{
   display: none;
