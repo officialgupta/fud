@@ -18,6 +18,13 @@ class FoodbanksController < ApplicationController
       config.server_token  = "ZN5dZ9KK0SeBdFpc2Hg0pRPWCDgtBF9JbajeIS5-"
     end
 
+    puts ">>>>>>>>>>>>>>>>>>>>>>>"
+    puts @loc[0]
+    puts @loc[1]
+    puts foodbank.latitude
+    puts foodbank.longitude
+
+
     @uber_prices = @foodbanks.inject({}) do |hash, foodbank|
       hash[foodbank.id] = client.price_estimations(start_latitude: @loc[0], start_longitude: @loc[1],
                            end_latitude: foodbank.latitude, end_longitude: foodbank.longitude)
