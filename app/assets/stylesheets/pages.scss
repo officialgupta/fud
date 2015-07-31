@@ -96,10 +96,13 @@ h1.subtitle {
 
 .food_title {
   color: white;
-  line-height: 60px;
   font-size: 20px;
   text-align: left;
   padding-left: 20px;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
 }
 
 /* BUTTONS and LINKS */
