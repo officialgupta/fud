@@ -1,27 +1,27 @@
-%div.number  
-  %h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
-
-%div.banks
-  %div.location  
+%div.foodbanks  
+  %div.number  
+    %h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
+  
+  %div.banks
     %ul.banklist
       - @foodbanks.each do |foodbank|
-        %li.bankname
-          %div.banklink
-            = link_to(foodbank_path( id: foodbank.id, loc: @loc)) do
-              %div.bankname
-                = "#{foodbank.name}, #{foodbank.county}"
-                %small
-                  = foodbank.company
-              %p
-                = foodbank.distance_to(@loc).round(1)
-                miles from your
-                = @home ? 'home' : 'location'
-
-You are donating:
-%ul
-  - current_user.items.donating.each do |item|
-    %li= item.food.name
-
-= link_to "Click here when you have donated these items!", donated_items_path
-%br
-%small= link_to "Not at home? Click here to find your location by GPS.", "#", id: "gps-link"
+        %li.bank
+          = link_to(foodbank_path( id: foodbank.id, loc: @loc)) do
+            %div
+              = "#{foodbank.name}, #{foodbank.county}"
+              %small
+                = foodbank.company
+            %p
+              = foodbank.distance_to(@loc).round(1)
+              miles from your
+              = @home ? 'home' : 'location'
+  
+    %div.donating  
+      You are donating:
+      %ul
+        - current_user.items.donating.each do |item|
+          %li= item.food.name
+      
+      = link_to "Click here when you have donated these items!", donated_items_path
+      %br
+      %small= link_to "Not at home? Click here to find your location by GPS.", "#", id: "gps-link"
