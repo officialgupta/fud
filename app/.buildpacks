@@ -1,2 +1,2 @@
-https://github.com/heroku/heroku-buildpack-ruby
-https://github.com/matteotiziano/heroku-buildpack-tesseract
+https://github.com/heroku/heroku-buildpack-ruby.git
+https://github.com/fouady/heroku-buildpack-tesseract.git
