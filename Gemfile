@@ -43,6 +43,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'sqlite3' # Joel, I'm not rebuilding my database so please leave this in
 end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
