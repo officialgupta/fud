@@ -17,7 +17,7 @@ gem 'rails4-autocomplete'
 gem 'httparty'
 
 # Image suff
-gem 'tesseract-ocr'
+#gem 'tesseract-ocr'
 gem 'rmagick'
 gem 'rtesseract'
 gem "paperclip", "~> 4.3"
@@ -43,9 +43,6 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
