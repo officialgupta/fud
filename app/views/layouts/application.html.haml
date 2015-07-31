@@ -20,12 +20,13 @@
         %div#menu
           = link_to "#modal", class: "open-modal" do
             %div.plus_link +
-          =link_to root_path do
-            %img.dashboard_link{:src=>"/assets/dashboard.png"}
-          =link_to recipes_path do
-            %img.recipe_link{:src=>"/assets/recipe.png"}
-          =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
-            %img.donate_link{:src=>"/assets/donate.png"}
+          .header-images
+            =link_to root_path do
+              %img.dashboard_link{:src=>"/assets/dashboard.png"}
+            =link_to recipes_path do
+              %img.recipe_link{:src=>"/assets/recipe.png"}
+            =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
+              %img.donate_link{:src=>"/assets/donate.png"}
           -if user_signed_in?
             =link_to edit_user_registration_path do
               %img.profile_link{:src=>current_user.avatar_url}
