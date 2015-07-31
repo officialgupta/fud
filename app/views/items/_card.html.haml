@@ -8,11 +8,11 @@
     %div.back
       %div.one_button
         = link_to recipes_url do
-          %img.recipe_button{:src=>"/assets/recipe.png"}
+          =image_tag("recipe.png", :class => "recipe_button")
       %div.other_buttons
         = link_to donate_item_path(item) do
-          %img.donate_button{:src=>"/assets/donate.png"}
+          =image_tag("donate.png", :class => "donate_button")
         = link_to use_item_url(item) do
-          %img.done_button{:src=>"/assets/done.png"}
+          =image_tag("done.png", :class => "done_button")
         = link_to dispose_item_url(item)  do
-          %img.trash_button{:src=>"/assets/trash.png"}
+          =image_tag("trash.png", :class => "trash_button")
