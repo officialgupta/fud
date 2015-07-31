@@ -65,9 +65,12 @@
     }
     ];
     $(document).ready (function(){
+    if ($('body').attr('id') == "users-show"){
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+    }
     });
+
 
 -content_for :head do
   %script
@@ -204,6 +207,8 @@
     }
     })(jQuery);
 
-    $(document).ready(function ($) {
+    $(document).ready(function () {
+    if ($('body').attr('id') == "users-show"){
     var myLeaderboard = new Leaderboard(".content", {limit:8,frequency:8});
+    }
     });

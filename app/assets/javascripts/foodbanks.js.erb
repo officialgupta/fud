@@ -10,5 +10,7 @@ function showPosition(position) {
 }
 
 $( document ).ready(function(){
-  getLocation();
+  if ($('body').attr('id') == "foodbanks-find"){
+    getLocation();
+  }
 });

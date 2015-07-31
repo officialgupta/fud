@@ -35,9 +35,9 @@ class ItemsController < ApplicationController
     @item.food_id = Food.where(:name => params[:item][:food_id]).first.id
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully added.' }
+        format.html { redirect_to root_path, notice: 'Item was successfully added.' }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: 'Please fill in the form correctly.'  }
       end
     end
   end

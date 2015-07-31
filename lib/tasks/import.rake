@@ -21,7 +21,7 @@ namespace :import do
 
   task food: :environment do
     Food.delete_all
-    csv_text = File.read("#{Rails.root}/data/FoodKeeper-Data.csv").encode('UTF-8', :invalid => :replace)
+    csv_text = File.read("#{Rails.root}/data/FoodKeeper-Data.csv").force_encoding('UTF-8')
     csv = CSV.parse(csv_text, :headers => true)
     type = "nil"
     csv.each do |row|
@@ -100,16 +100,19 @@ namespace :import do
   end
 
   task recipes: :environment do
-    Recipe.delete_all
     Food.all.each do |food|
-      response = HTTParty.get("http://food2fork.com/api/search?key=683198e85db6b8b99e433e685178bbd7&q=#{food.name.split.first.encode('UTF-8', :invalid => :replace)}")
+      response = HTTParty.get("http://food2fork.com/api/search?key=6605b2b5c513dc8105d663929596b0ae&q=#{food.name.split.first.encode('UTF-8', :invalid => :replace)}")
       data = response.parsed_response
       if data.present?
         JSON.parse(data)["recipes"].each do |r|
-          puts r.to_hash["title"]
-          recipe = Recipe.new(name: r.to_hash["title"], url: r.to_hash["source_url"])
-          recipe.foods << Food.search(r.to_hash["title"])
-          recipe.save
+          if Recipe.where(:name => r.to_hash["title"]).empty?
+            recipe = Recipe.new(name: r.to_hash["title"], url: r.to_hash["source_url"])
+            recipe.foods << Food.search(r.to_hash["title"])
+            recipe.save
+            puts r.to_hash["title"] + " created"
+          else
+            puts r.to_hash["title"] + " exists"
+          end
         end
       end
     end
