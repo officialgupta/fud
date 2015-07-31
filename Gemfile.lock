@@ -202,7 +202,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
     tesseract-ocr (0.1.8)
       call-me
       ffi-extra
@@ -262,7 +261,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spellingbee
   spring
-  sqlite3
   tesseract-ocr
   turbolinks
   uber-ruby
