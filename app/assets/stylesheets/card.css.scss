@@ -19,21 +19,21 @@
 
 .front {
 	z-index: 2;
-	transform: rotateY(0deg);
+	transform: rotateX(0deg);
 	display: flex;
   justify-content: flex-start;
    flex-direction: row;
 }
 
 .back {
-	transform: rotateX(180deg);
+	transform: rotateX(180deg) translateZ(5px);
 	z-index:2;
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: row;
 	align-items: stretch;
 	//background-color: ;
-	
+
 	margin-top: -55px;
 }
 

@@ -11,26 +11,27 @@
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
     = yield :head
-    %script{:src => "Chart.js"}
   %body{id: (controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew" ) ? "" : "full-background"}
     -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
-      %div.notice= notice
-      %div.alert= alert
       %div#header
         = link_to root_path do
-          %img#logo{:src=>"/assets/logo.png"}
+          =image_tag("logo.png", :id => "logo")
         %div#menu
           = link_to "#modal", class: "open-modal" do
             %div.plus_link +
           =link_to root_path do
-            %img.dashboard_link{:src=>"/assets/dashboard.png"}
+            =image_tag("dashboard.png", :class => "dashboard_link")
           =link_to recipes_path do
-            %img.recipe_link{:src=>"/assets/recipe.png"}
+            =image_tag("recipe.png", :class => "recipe_link")
           =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
-            %img.donate_link{:src=>"/assets/donate.png"}
+            =image_tag("donate.png", :class => "donate_link")
+
           -if user_signed_in?
-            =link_to edit_user_registration_path do
+            =link_to profile_path(id: current_user.id) do
               %img.profile_link{:src=>current_user.avatar_url}
     %div#footer Füd retain all rights to Füd despite what happened in 2012 | #FoC2015 | Team Hypertext: @_emmacorlett @officialgupta @ThisIsNeena @JoelMayer286
+    -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
+      %div.notice= notice
+      %div.alert= alert
     = yield
     = render "items/add"

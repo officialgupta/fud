@@ -1,1 +1,24 @@
-// Recipes page goes here
+- if @pages > 0
+  %ul
+    - @recipes.each  do |recipe|
+      %li
+        %h3
+          = link_to recipe.name, recipe_path(id:recipe.id)
+          %small= "#{recipe.cuisine} cuisine"
+        %p= recipe.ingredients.join(", ")
+        = image_tag(recipe.thumb)
+
+  = link_to "Previous page", recipes_path(page: @page - 1, ingredients: @ingredients) unless @page <= 1
+  = "Page #{@page} of #{@pages}"
+  = link_to "Next page", recipes_path(page: @page + 1, ingredients: @ingredients) unless @page >= @pages
+
+
+  %br
+  %br
+  %br
+  %br
+
+- else
+
+  %h1 No recipes found
+  %h3 Sorry!

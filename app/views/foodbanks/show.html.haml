@@ -1,0 +1,6 @@
+%h1= "#{@foodbank.name}, #{@foodbank.county}"
+%h3= @foodbank.company
+
+= "This will cost you #{@foodbank.uber_price(@loc)[0].estimate} by #{@foodbank.uber_price(@loc)[0].display_name} from #{@home ? 'home' : 'here'}"
+%br
+= link_to "Google Maps Directions", "https://www.google.com/maps/dir/Current+Location/#{@foodbank.latitude},#{@foodbank.longitude}", target: "_blank"

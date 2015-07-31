@@ -17,7 +17,7 @@ gem 'rails4-autocomplete'
 gem 'httparty'
 
 # Image suff
-gem 'tesseract-ocr'
+#gem 'tesseract-ocr'
 gem 'rmagick'
 gem 'rtesseract'
 gem "paperclip", "~> 4.3"
@@ -28,6 +28,7 @@ gem 'flickr_fu'
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -42,7 +43,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
+  gem 'sqlite3' # Joel, I'm not rebuilding my database so please leave this in
 end
 
 group :production do

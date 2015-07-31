@@ -4,15 +4,17 @@
       %div.food_expiry{style: "background: rgba(#{food_expiry_colour(item.expires_in)}, 0.85)"}
         = item.expires_in
         d
-      %div.food_title= item.food.name.truncate(20)
+      %div.food_title
+        %span= item.food.name
     %div.back
       %div.one_button
-        = link_to recipes_url do
+        = link_to recipes_url(ingredients: [item.food]) do
           %img.recipe_button{:src=>"/assets/recipe.png"}
       %div.other_buttons
-        = link_to donate_item_path(item) do
-          %img.donate_button{:src=>"/assets/donate.png"}
-        = link_to use_item_url(item) do
+        - unless item.expired?
+          = link_to donate_item_path(item) do
+            %img.donate_button{:src=>"/assets/donate.png"}
+        = link_to use_item_path(item) do
           %img.done_button{:src=>"/assets/done.png"}
-        = link_to dispose_item_url(item)  do
+        = link_to dispose_item_path(item) do
           %img.trash_button{:src=>"/assets/trash.png"}
