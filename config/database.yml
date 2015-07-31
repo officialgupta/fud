@@ -8,8 +8,7 @@ default: &default
   development:
   adapter: postgresql
   host: localhost
-  username: user
-  
+
 development:
   <<: *default
   database: app-dev
@@ -24,3 +23,4 @@ test:
 production:
   <<: *default
   database: app-prod
+  username: user
