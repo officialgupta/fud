@@ -26,6 +26,9 @@ body {
   height: 10%;
   order: 1;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #menu {
@@ -34,6 +37,11 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 
 }
 
@@ -103,6 +111,7 @@ h1.subtitle {
   justify-content:center;
   align-content:center;
   flex-direction:column;
+  font-weight: 200;
 }
 
 /* BUTTONS and LINKS */
