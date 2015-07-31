@@ -9,6 +9,10 @@ body {
   font-family: $lato;
 }
 
+a {
+  color: inherit;
+}
+
 #header {
   display: flex;
   background-color: #568203;
@@ -435,6 +439,9 @@ h1.subtitle {
 }
 
 /*FOODBANKS*/
+.foodbanks {
+  margin: 10px;
+}
 
 .number {
   position: relative;
@@ -445,17 +452,68 @@ h1.subtitle {
   font-family: $lato;
   background-color: $color-button;
   border-radius: 40px;
+  box-shadow: 0 0 5px $color-shadow;
 }
 
 .number h1 {
   color: white;
+  padding: 10px;
 }
 
 .banks {
+  font-family: $lato;
   display: flex;
-  align-items: center;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: row;
+}
+
+.banklist {
+  list-style-type: none;
+  color: white;
+  margin-top: 0;
+}
+
+.bank {
+  background-color: $color-main-light;
+  width: 50%;
+  box-shadow: 0 0 5px $color-shadow;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: inherit;
+}
+
+// .banklink {
+//   font-size: 30pt;
+// }
+
+// .bankname {
+//   font-size: 30pt;
+// }
+
+.donating {
+  color: white;
+  margin-top: 10px;
+  position: relative;
+  padding: 15px 15px 30px 15px;
+  background: $color-main-light;
+}
+
+.donating:after {
+  background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 32px;
 }
 
 #gps-link{
