@@ -65,10 +65,10 @@
     }
     ];
     $(document).ready (function(){
-      if ($('body').attr('id') == "users-show"){
-        var ctx = document.getElementById("chart-area").getContext("2d");
-        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
-      }
+    if ($('body').attr('id') == "users-show"){
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+    }
     });
 
 
