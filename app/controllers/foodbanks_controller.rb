@@ -12,7 +12,7 @@ class FoodbanksController < ApplicationController
       @loc = [@latitude.to_f, @longitude.to_f]
     end
 
-    @foodbanks = Foodbank.within(@distance, origin: @loc).sort_by{|f| f.distance_to(@loc)}
+    @foodbanks = Foodbank.within(@distance, origin: @loc).sort_by{|f| f.distance_to(@loc)}.select{|f| f.distance_to(@loc) < @distance}
 
   end
 
