@@ -198,15 +198,17 @@ h1.subtitle {
   //opacity: 0.3;
 }
 
-//.expired {
-  //background-color: #dd3322;
-//}
-//.soon {
-  //background-color: #ffaa22;
-//}
-//.indate {
-  //background-color: #78a425;
-//}
+.expired {
+  background-color: #dd3322;
+}
+
+.soon {
+  background-color: #ffaa22;
+}
+
+.indate {
+  background-color: #78a425;
+}
 
  /*PROFILE*/
 
@@ -332,7 +334,7 @@ h1.subtitle {
     position: relative;
     color: white;
     font-family: $lato;
-    padding: 5%;
+    padding:2% 5%;
     border-bottom: 1px solid $color-button;
 }
 
@@ -418,4 +420,28 @@ h1.subtitle {
 .share-icon-exep {
   height: 13px !important;
   width: 13px !important;
+}
+
+/*FOODBANKS*/
+
+.number {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  text-align:center;
+  font-family: $lato;
+  background-color: $color-button;
+  border-radius: 40px;
+}
+
+.number h1 {
+  color: white;
+}
+
+.banks {
+  display: flex;
+  align-items: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
