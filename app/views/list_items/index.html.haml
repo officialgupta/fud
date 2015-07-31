@@ -1,0 +1,5 @@
+=link_to("New item", new_list_item_path)
+-@list_items.each do |item|
+  =item.food.name
+  =link_to("Delete", list_item_path(item), :method => :delete)
+  =link_to("Check off", list_items_check_off_path(item))

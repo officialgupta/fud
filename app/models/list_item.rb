@@ -1,5 +1,6 @@
 class ListItem < ActiveRecord::Base
   belongs_to :food
+  belongs_to :user
 
   def check_off
     Item.create(user: self.user,

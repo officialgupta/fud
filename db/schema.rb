@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729154156) do
+ActiveRecord::Schema.define(version: 20150731190045) do
 
   create_table "foodbanks", force: :cascade do |t|
     t.string   "company"
@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 20150729154156) do
   end
 
   create_table "list_items", force: :cascade do |t|
-    t.integer  "foods_id"
-    t.integer  "users_id"
     t.decimal  "quantity"
     t.string   "quantity_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "food_id"
   end
 
   create_table "photos", force: :cascade do |t|

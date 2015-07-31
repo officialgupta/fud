@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :photos
 
+  resources :list_items
+  get '/list_items/check_off/:id' => 'list_items#check_off', :as => "list_items_check_off"
+
   resources :items do
     get :autocomplete_food_name, :on => :collection
     get 'use', on: :member
@@ -28,7 +31,6 @@ Rails.application.routes.draw do
   get "/profile/:id" => 'users#show', :as => "profile"
 
   get "/points/:name" => 'users#points'
-  get ':name' => 'pages#show'
 
   get "/page/:name" => "pages#show"
 
