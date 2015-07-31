@@ -32,6 +32,7 @@ class Food < ActiveRecord::Base
   end
 
   def self.search(words)
+    return Food.where(['lower(name) LIKE ?', "%chicken%"]) if words.nil? 
     foods = Set.new
 
     words.split(" ").each do |keyword|
