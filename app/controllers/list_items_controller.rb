@@ -17,7 +17,7 @@ class ListItemsController < ApplicationController
       if  @list_item.save
         format.html { redirect_to list_items_path, notice: 'Item was successfully added.' }
       else
-        format.html { redirect_to list_items_path, notice: 'Please fill in the form correctly.' }
+        format.html { redirect_to list_items_path, alert: 'Please fill in the form correctly.' }
       end
     end
   end

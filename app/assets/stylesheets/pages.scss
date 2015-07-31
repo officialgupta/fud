@@ -71,6 +71,18 @@ a {
   margin-bottom: 40px;
 }
 
+.notice {
+  background-color: $color-main-dark;
+  color: white;
+  padding: 5px;
+}
+
+.alert {
+  background-color: $color-button-light;
+  color: white;
+  padding: 5px;
+}
+
 .no-dec {
   text-decoration: none;
 }

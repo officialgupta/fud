@@ -18,11 +18,11 @@ class Item < ActiveRecord::Base
   scope :disposed, -> { where("status = 'disposed'") }
 
   def set_when_expire
-    self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days
+    self.when_expire = self.when_bought + self.food.time_to_expire_in_days.days if self.food.present?
   end
 
   def set_where_stored
-    self.where_stored = self.food.where_stored
+    self.where_stored = self.food.where_stored if self.food.present?
   end
 
   def expired?
