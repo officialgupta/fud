@@ -57,7 +57,7 @@ class Item < ActiveRecord::Base
     foods = Food.from_image(photo_path)
     if foods.present?
       foods.each do |food|
-        Item.create!(:food_id => food.id, :quantity => 1, :quantity_type => "units", :when_bought => Date.today)
+        Item.create!(:food_id => food.id, :quantity => 1, :quantity_type => "units", :when_bought => Date.today, :user_id => user_id)
       end
     end
   end
