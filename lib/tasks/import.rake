@@ -21,7 +21,7 @@ namespace :import do
 
   task food: :environment do
     Food.delete_all
-    csv_text = File.read("#{Rails.root}/data/FoodKeeper-Data.csv").encode('utf-8', 'iso-8859-1')
+    csv_text = File.read("#{Rails.root}/data/FoodKeeper-Data.csv").force_encoding('ASCII-8BIT')
     csv = CSV.parse(csv_text, :headers => true)
     type = "nil"
     csv.each do |row|
