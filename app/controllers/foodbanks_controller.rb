@@ -21,11 +21,11 @@ class FoodbanksController < ApplicationController
     puts ">>>>>>>>>>>>>>>>>>>>>>>"
     puts @loc[0]
     puts @loc[1]
-    puts foodbank.latitude
-    puts foodbank.longitude
 
 
     @uber_prices = @foodbanks.inject({}) do |hash, foodbank|
+      puts foodbank.latitude
+      puts foodbank.longitude
       hash[foodbank.id] = client.price_estimations(start_latitude: @loc[0], start_longitude: @loc[1],
                            end_latitude: foodbank.latitude, end_longitude: foodbank.longitude)
       hash
