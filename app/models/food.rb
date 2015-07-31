@@ -32,7 +32,7 @@ class Food < ActiveRecord::Base
   end
 
   def self.search(words)
-    return Food.where(['lower(name) LIKE ?', "%chicken%"]) if words.nil? 
+    return Food.where(['lower(name) LIKE ?', "%chicken%"]) if words.nil?
     foods = Set.new
 
     words.split(" ").each do |keyword|
@@ -46,8 +46,7 @@ class Food < ActiveRecord::Base
   end
 
   def self.from_ean(ean)
-    auth = {:username => "fe1f040131f9f3503d5afe14137ad067", :password => "test"}
-    response = HTTParty.get("https://api.outpan.com/v1/products/#{ean}", :basic_auth => auth)
+    response = HTTParty.get("https://www.datakick.org/api/items/#{ean}")
     self.search(response["name"]).first
   end
 
