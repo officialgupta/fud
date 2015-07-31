@@ -16,7 +16,7 @@ namespace :reminders do
           items = user.items.select {|i| i.expired_in?(7)}.first.food.name
         end
 
-        message = api.messages.build( :to => "44#{user.phone}", :content => "Your #{items} will expire in three days, consider using them. Reply to 84477 with item:status for each item to update it's status to in-use, used, donated or disposed." )
+        message = api.messages.build( :to => "44#{user.phone}", :content => "Your #{items} will expire in three days, consider using them. Reply with FUD to 84477 with 'item':'status' for each item to update it's status to in-use, used, donated or disposed." )
         response = message.deliver
 
         if response.success

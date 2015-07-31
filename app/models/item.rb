@@ -42,11 +42,11 @@ class Item < ActiveRecord::Base
   end
 
   def self.sms(content, number)
-    user = User.select{|u| u.phone = "+#{number}"}.first
+    user = User.where(['phone LIKE ?', "%#{number}%"]).first
     items = user.items.select{|i| i.expired_in?(3)}
     content.split(" ").each do |c|
       if c.match(/(\S+)[:](\S+)/)
-        item = items.select {|i| i.food.name == c.match(/(\S+)[:](\S+)/)[1]}.first
+        item = items.select {|i| i.food.name == c.match(/['](.+)['][:]['](.+)[']/)[1]}.first
         item.status = c.match(/(\S+)[:](\S+)/)[2]
         item.save
       end
