@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  require 'HTTParty'
+  require 'httparty'
   require 'uri'
   def index
     if params[:ingredients].nil? && current_user.items.in_use.count != 0
