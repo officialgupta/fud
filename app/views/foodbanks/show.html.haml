@@ -3,4 +3,6 @@
 
 = "This will cost you #{@foodbank.uber_price(@loc)[0].estimate} by #{@foodbank.uber_price(@loc)[0].display_name} from #{@home ? 'home' : 'here'}"
 %br
-= link_to "Google Maps Directions", "https://www.google.com/maps/dir/Current+Location/#{@foodbank.latitude},#{@foodbank.longitude}", target: "_blank"
+
+.map
+  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed/v1/directions?origin=#{current_user.postcode}&destination=#{@foodbank.latitude},#{@foodbank.longitude}&mode=driving&key=AIzaSyCSh_Tr6xVHNaK53smr-t_oeIPpxW3ohNo", :style => "border:0", :width => "600"}

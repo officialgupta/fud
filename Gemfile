@@ -7,7 +7,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'clockworksms'
 gem 'phony_rails'
 gem 'haml'
-gem 'rails_12factor'
 
 gem 'html2haml'
 gem 'devise'
