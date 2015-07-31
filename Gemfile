@@ -17,7 +17,7 @@ gem 'rails4-autocomplete'
 gem 'httparty'
 
 # Image suff
-gem 'tesseract-ocr'
+#gem 'tesseract-ocr'
 gem 'rmagick'
 gem 'rtesseract'
 gem "paperclip", "~> 4.3"
