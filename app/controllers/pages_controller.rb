@@ -5,6 +5,10 @@ class PagesController < ApplicationController
 
   def show
     @user = User.first
-    render "pages/#{params[:name]}"
+    if params[:name] == "digest_design"
+      render "pages/#{params[:name]}", layout: false
+    else
+      render "pages/#{params[:name]}"
+    end
   end
 end
