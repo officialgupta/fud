@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     @page = 1 if @page == 0
 
     response = HTTParty.get("http://api.pearson.com:80/kitchen-manager/v1/recipes?ingredients-any=#{URI.encode(@search_ingredients)}&offset=#{(@page-1)*20}&limit=20")
-    @response= response.body.encode("iso-8859-1", :invalid => :replace).force_encoding("utf-8")
+    @response= response.body.encode("cp1252", :invalid => :replace).force_encoding("utf-8")
     @recipes = JSON.parse(@response)["results"].map{|r| OpenStruct.new(r)}
 
     @pages = (response.parsed_response["total"]/20.0).ceil
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
 
   def show
     response = HTTParty.get("https://api.pearson.com/kitchen-manager/v1/recipes/#{params[:id]}")
-    @response= response.body.encode("iso-8859-1", :invalid => :replace).force_encoding("utf-8")
+    @response= response.body.encode("cp1252", :invalid => :replace).force_encoding("utf-8")
     @recipe = OpenStruct.new(JSON.parse(@response))
   end
 end
