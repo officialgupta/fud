@@ -13,6 +13,7 @@ gem 'html2haml'
 gem 'devise'
 gem 'chronic_duration'
 gem 'rails4-autocomplete'
+gem 'bootstrap-sass'
 
 # JSON
 gem 'httparty'

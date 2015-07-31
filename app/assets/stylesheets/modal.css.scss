@@ -48,26 +48,27 @@ modal.p {
 }
 
 .ui-menu-item {
- list-style: none; 
+ list-style: none;
 }
 
 .receipt {
   position: relative;
-  padding: 8px 8px 32px 8px;
-  background: $color-main-light;
+  padding: 8px 8px 0px 8px;
 }
 
 .manual {
   position: relative;
   padding: 8px 8px 32px 8px;
-  background: $color-main-light;
+  h3{
+    margin-top: 0;
+  }
 }
 
 .manual:after {
-  background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
-  background-position: left-bottom;
-  background-repeat: repeat-x;
-  background-size: 32px 32px;
+  // background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+  // background-position: left-bottom;
+  // background-repeat: repeat-x;
+  // background-size: 32px 32px;
   content: " ";
   display: block;
   position: absolute;
@@ -75,4 +76,26 @@ modal.p {
   left: 0px;
   width: 100%;
   height: 32px;
+}
+
+#modal {
+  form {
+    font-weight: 200;
+    input {
+      border: 1px solid #BDBDBD;
+      border-radius: 6px;
+      display: block;
+      margin: 0 0 10px 0;
+    }
+    button, .button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: $color-main-light;
+      border: none;
+      color: white;
+      font-size: 14px;
+    }
+  }
+
+
 }
