@@ -3,7 +3,7 @@ require 'clockwork'
 namespace :reminders do
   desc "TODO"
   task send: :environment do
-    api = Clockwork::API.new("747712a2862cccbde09c98ecc7beac7429b2b8e6")
+    api = Clockwork::API.new("347312a2862cccbde09c98ecc7beac7429b2b8e6")
 
     User.all.each do |user|
       if user.items.select{|i| i.expired_in?(7)}.count > 0
