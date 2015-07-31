@@ -452,10 +452,27 @@ h1.subtitle {
 }
 
 .banks {
+  font-family: $lato;
+  color: white;
+}
+
+.banklist {
+  list-style-type: none;
   display: flex;
-  align-items: center;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.bankname {
+  background-color: $color-main-light;
+  width: 50%;
+  box-shadow: 0 0 5px $color-shadow;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 #gps-link{
