@@ -14,8 +14,6 @@
     %script{:src => "Chart.js"}
   %body{id: (controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew" ) ? "" : "full-background"}
     -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
-      %div.notice= notice
-      %div.alert= alert
       %div#header
         = link_to root_path do
           %img#logo{:src=>"/assets/logo.png"}
@@ -32,5 +30,8 @@
             =link_to edit_user_registration_path do
               %img.profile_link{:src=>current_user.avatar_url}
     %div#footer Füd retain all rights to Füd despite what happened in 2012 | #FoC2015 | Team Hypertext: @_emmacorlett @officialgupta @ThisIsNeena @JoelMayer286
+    -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
+      %div.notice= notice
+      %div.alert= alert
     = yield
     = render "items/add"
