@@ -1,19 +1,19 @@
-%h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
-%ul
-  - @foodbanks.each do |foodbank|
-    %li
-      %h3
-        = "#{foodbank.name}, #{foodbank.county}"
-        %small= foodbank.company
-        %label
-          = foodbank.distance_to(@loc).round(1)
-          miles from your
-          = @home ? 'home' : 'location'
-      %h4
-        = "This will cost you #{@uber_prices[foodbank.id][0].estimate} by #{@uber_prices[foodbank.id][0].display_name} from #{@home ? 'home' : 'here'}"
-        |
-        = link_to "Google Maps Directions", "https://www.google.com/maps/dir/Current+Location/#{foodbank.latitude},#{foodbank.longitude}", target: "_blank"
-      %p= foodbank.contact
+%div.number  
+  %h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
+
+%div.banks
+  %div.location  
+    %ul
+      - @foodbanks.each do |foodbank|
+        %li
+          %h3
+            = link_to foodbank_path(id: foodbank.id, loc: @loc) do
+              = "#{foodbank.name}, #{foodbank.county}"
+              %small= foodbank.company
+            %label
+              = foodbank.distance_to(@loc).round(1)
+              miles from your
+              = @home ? 'home' : 'location'
 
 I am donating
 %ul

@@ -9,6 +9,10 @@
           %li= message
   %p
 
+    = f.label :food_id
+    =f.autocomplete_field :food_id, autocomplete_food_name_items_path
+
+
     = f.label :when_bought
     = f.date_field :when_bought
 
@@ -17,10 +21,6 @@
 
     = f.label :quantity_type
     = f.collection_select(:quantity_type, ["g", "kg", "ml", "l", "units"], :to_s, :to_s, prompt: true)
-
-    = f.label :food_id
-    =f.autocomplete_field :food_id, autocomplete_food_name_items_path
-
     = f.hidden_field :status, :value => "in-use"
 
     = f.submit :class => "button"

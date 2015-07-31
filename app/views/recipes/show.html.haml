@@ -1,0 +1,19 @@
+= link_to "Back to recipe list", request.env["HTTP_REFERER"]
+%h1= @recipe.name
+%h3= "#{@recipe.cuisine} cuisine | #{@recipe.cooking_method} | Serves: #{@recipe.serves}"
+
+= image_tag(@recipe.image)
+
+%ul
+  - @recipe.ingredients.each do |ingredient|
+    - ingredient = OpenStruct.new(ingredient)
+    %li
+      %strong= ingredient.name
+      = "#{ingredient.quantity} #{ingredient.unit.strip}"
+      = ", #{ingredient.preparation}" if ingredient.preparation
+
+%ol
+  - @recipe.directions.each do |dir|
+    %li= dir
+
+= @recipe.nutritional_info.map{|k,v| "<strong>#{k.capitalize.gsub("_", " ")}: </strong>#{v}"}.join("<br>").html_safe

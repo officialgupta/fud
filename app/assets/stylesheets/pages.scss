@@ -26,6 +26,9 @@ body {
   height: 10%;
   order: 1;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #menu {
@@ -34,6 +37,11 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 
 }
 
@@ -96,10 +104,14 @@ h1.subtitle {
 
 .food_title {
   color: white;
-  line-height: 60px;
   font-size: 20px;
   text-align: left;
   padding-left: 20px;
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  flex-direction:column;
+  font-weight: 200;
 }
 
 /* BUTTONS and LINKS */
@@ -422,6 +434,30 @@ h1.subtitle {
   width: 13px !important;
 }
 
-.header-images {
-  margin-top: 20px;
+/*FOODBANKS*/
+
+.number {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  text-align:center;
+  font-family: $lato;
+  background-color: $color-button;
+  border-radius: 40px;
+}
+
+.number h1 {
+  color: white;
+}
+
+.banks {
+  display: flex;
+  align-items: center;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+#gps-link{
+  display: none;
 }

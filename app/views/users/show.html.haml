@@ -22,6 +22,9 @@
         %i.share-icon.fa.fa-google-plus
       %a.no-dec.share-link.pin-it-button{"count-layout" => "horizontal", :href => "http://pinterest.com/pin/create/button/?url=#{request.original_url}&media=http://ontv.uk.com/wp-content/uploads/2015/06/Good-Food-Guide-editor-calls-for-more-veggie-options-on-pub-menus.jpg"}
         %i.share-icon.fa.fa-pinterest
+    - if user_signed_in?
+      %div.row
+        = link_to "Edit my details", edit_user_registration_path
   %div.profile
     %div.stats
       %canvas#chart-area{:height => "400", :width => "400"}
@@ -61,10 +64,10 @@
     label: "Donated"
     }
     ];
-    window.onload = function(){
+    $(document).ready (function(){
     var ctx = document.getElementById("chart-area").getContext("2d");
     window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
-    };
+    });
 
 -content_for :head do
   %script
@@ -201,6 +204,6 @@
     }
     })(jQuery);
 
-    $(document).ready(function ($) {
+    $(document).ready(function () {
     var myLeaderboard = new Leaderboard(".content", {limit:8,frequency:8});
     });
