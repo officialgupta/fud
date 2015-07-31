@@ -1,0 +1,78 @@
+@import "prequisites";
+
+.modal-wrap {
+  &:before {
+    content: "";
+    background: rgba(0,0,0,0.6);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  // Closed
+  &.closed {
+    display: none;
+  }
+}
+.modal {
+  font-family: $lato;
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  display: block;
+  background: #fff;
+  padding: 50px;
+  width: 600px;
+  height: 1000px;
+  max-width: 100%;
+}
+
+modal.p {
+  color: white;
+}
+
+.open-modal {
+  text-decoration: none;
+}
+
+.ui-helper-hidden-accessible:last-child {
+  display: none;
+}
+
+.force-open {
+  display: inline !important;
+}
+
+.ui-menu-item {
+ list-style: none; 
+}
+
+.receipt {
+  position: relative;
+  padding: 8px 8px 32px 8px;
+  background: $color-main-light;
+}
+
+.manual {
+  position: relative;
+  padding: 8px 8px 32px 8px;
+  background: $color-main-light;
+}
+
+.manual:after {
+  background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 32px;
+}
