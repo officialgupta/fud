@@ -1,15 +1,19 @@
-%h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
-%ul
-  - @foodbanks.each do |foodbank|
-    %li
-      %h3
-        = link_to foodbank_path(id: foodbank.id, loc: @loc) do
-          = "#{foodbank.name}, #{foodbank.county}"
-          %small= foodbank.company
-        %label
-          = foodbank.distance_to(@loc).round(1)
-          miles from your
-          = @home ? 'home' : 'location'
+%div.number  
+  %h1= "There are #{@foodbanks.count} foodbanks within #{@distance} miles of your #{@home ? 'home' : 'location'}"
+
+%div.banks
+  %div.location  
+    %ul
+      - @foodbanks.each do |foodbank|
+        %li
+          %h3
+            = link_to foodbank_path(id: foodbank.id, loc: @loc) do
+              = "#{foodbank.name}, #{foodbank.county}"
+              %small= foodbank.company
+            %label
+              = foodbank.distance_to(@loc).round(1)
+              miles from your
+              = @home ? 'home' : 'location'
 
 I am donating
 %ul
