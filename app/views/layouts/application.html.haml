@@ -12,7 +12,7 @@
     = csrf_meta_tags
     = yield :head
   %body{id: ((controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew" ) ? "" : "full-background ")+controller_name+"-"+action_name}
-    -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew"
+    -if controller_name+action_name != "registrationsnew" && controller_name+action_name != "sessionsnew" && controller_name+action_name != "registrationscreate"
       %div#header
         = link_to root_path do
           =image_tag("logo.png", :id => "logo")
