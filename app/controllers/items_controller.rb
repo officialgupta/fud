@@ -32,13 +32,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @item.food_id = Food.where(:name => params[:item][:food_id]).first.id
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to root_path, notice: 'Item was successfully added.' }
-      else
-        format.html { redirect_to root_path, notice: 'Please fill in the form correctly.'  }
-      end
+    if params[:item][:food_id].present?
+      @item.food_id = Food.where(:name => params[:item][:food_id]).first.id
+    end
+    if @item.save
+      redirect_to root_path, notice: 'Item was successfully added.'
+    else
+      redirect_to root_path, alert: 'Please fill in the form correctly.'
     end
   end
 
