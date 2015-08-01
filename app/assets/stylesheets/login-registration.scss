@@ -8,12 +8,19 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  background:
+  linear-gradient(
+    rgba(50, 50, 50, 0.6),
+    rgba(50, 50, 50, 0.6)
+  ),
+  url("/assets/background.jpg");
+  background-size: cover;
 }
 
 #full-background {
-  background: 
+  background:
   linear-gradient(
-    rgba(50, 50, 50, 0.6), 
+    rgba(50, 50, 50, 0.6),
     rgba(50, 50, 50, 0.6)
   ),
   url("/assets/background.jpg");
@@ -25,7 +32,9 @@
   height:20%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
 }
+
 .subtitle2 {
   font-family: $comfortaa;
   margin-left: auto;
@@ -37,9 +46,9 @@
 .user {
   background-color: rgba(50,50,50, 0.6);
   padding: 20px 60px 20px 60px;
-  margin-bottom: 50px;
-  
+  margin-bottom: 30px;
 }
+
 .user, .info {
   margin-left: auto;
   margin-right: auto;
@@ -66,7 +75,7 @@
   color: white;
   box-shadow: 0 0 5px $color-shadow;
   border: none;
-  
+
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
