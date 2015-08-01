@@ -5,7 +5,7 @@
         = item.expires_in
         d
       %div.food_title
-        %span= item.food.name
+        %span= item.food.name.truncate(20)
     %div.back
       %div.one_button
         = link_to recipes_url(ingredients: [item.food]) do
