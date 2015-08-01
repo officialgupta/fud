@@ -52,7 +52,11 @@ class Food < ActiveRecord::Base
 
   def self.from_image(image_path)
     image = RTesseract.new(image_path)
-    text = Spell.correct_para(image.to_s)
+    begin
+      text = Spell.correct_para(image.to_s)
+    rescue
+      text = Food.first.name
+    end
     if text.present?
       self.search(text)
     else
