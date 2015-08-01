@@ -8,6 +8,13 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  background:
+  linear-gradient(
+    rgba(50, 50, 50, 0.6),
+    rgba(50, 50, 50, 0.6)
+  ),
+  url("http://ontv.uk.com/wp-content/uploads/2015/06/Good-Food-Guide-editor-calls-for-more-veggie-options-on-pub-menus.jpg");
+  background-size: cover;
 }
 
 #full-background {
