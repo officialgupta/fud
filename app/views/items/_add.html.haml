@@ -11,10 +11,10 @@
   .modal
     %h2 Add New Item
     - if request.env['HTTP_USER_AGENT'].downcase.match(/android/)
-      %div.receipt
+      %div.barcode
         %h3 Scan a barcode
         = link_to "Scan a barcode", "zxing://scan/?ret=#{Rack::Utils.escape(scan_url+ "?content=")}%2F%7BCODE%7D&SCAN_FORMATS=UPC_A,EAN_13", :class => "button"
-      %hr
+      %hr.barcode
     %div.receipt
       %h3 Upload image of receipt for scanning
       = render 'photos/form', :@photo => Photo.new
