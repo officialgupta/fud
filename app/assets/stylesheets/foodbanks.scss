@@ -1,0 +1,44 @@
+.foodbanks-container{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 600px) {
+    width: 98%;
+  }
+  ul.banklist{
+    width: 60%;
+    float: left;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      background: #F5F5F5;
+      padding: 5px;
+      margin: 10px 0;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      h3{
+        margin: 3px 0;
+      }
+    }
+  }
+  .donating{
+    width: 30%;
+    float: right;
+    display: inline;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background: #F5F5F5;
+    padding: 10px;
+  }
+}
+
+.foodbank-container{
+  width: 600px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 600px) {
+    width: 98%;
+  }
+}

@@ -16,4 +16,5 @@
 //= require autocomplete-rails
 //= require turbolinks
 //= require jquery.turbolinks
+//= require masonry/masonry.min
 //= require_tree .
