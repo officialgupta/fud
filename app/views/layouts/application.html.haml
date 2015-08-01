@@ -23,7 +23,7 @@
             =image_tag("dashboard.png", :class => "dashboard_link")
           =link_to recipes_path do
             =image_tag("recipe.png", :class => "recipe_link")
-          =link_to find_foodbanks_path, class: "badge", data: {badge: current_user.items.donating.count} do
+          =link_to find_foodbanks_path, class: current_user.items.donating.count > 0 ? 'badge' : '', data: {badge: current_user.items.donating.count} do
             =image_tag("donate.png", :class => "donate_link")
 
           -if user_signed_in?
