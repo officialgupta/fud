@@ -21,9 +21,12 @@
 
 
     %div.donating
-      You are donating:
-      %ul
-        - current_user.items.donating.each do |item|
-          %li= item.food.name
+      -if current_user.items.donating.count > 0
+        You are donating:
+        %ul
+          - current_user.items.donating.each do |item|
+            %li= item.food.name
 
-      = link_to "Already donated?", donated_items_path, class: "green-button"
+        = link_to "Already donated?", donated_items_path, class: "green-button"
+      -else
+        You are not donating any items currently donating
