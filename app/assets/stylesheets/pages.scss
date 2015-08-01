@@ -103,8 +103,8 @@ a {
   margin-top: 20px;
 }
 
-h1.subtitle {
-  color: $color-subtitle;
+.subtitle {
+  color: $color-button-light;
   font-size: 40px;
   margin: 0;
 }
@@ -170,6 +170,12 @@ h1.subtitle {
   color: white;
   margin-right: 20px;
   //margin-bottom: 4px;
+}
+
+.plus_link, .recipe_link, .donate_link, .dashboard_link {
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .recipe_link {
@@ -578,4 +584,20 @@ h1.subtitle {
   left: 0px;
   width: 100%;
   height: 32px;
+}
+
+.green-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: $color-main-light;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+
+}
+
+.edit-my-profile {
+  width: 40px;
 }

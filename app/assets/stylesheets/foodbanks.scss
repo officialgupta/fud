@@ -1,4 +1,9 @@
+@import "prequisites";
+
 .foodbanks-container{
+  .number{
+    color: $color-button-light;
+  }
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -13,13 +18,17 @@
     padding: 0;
     li {
       list-style: none;
-      background: #F5F5F5;
-      padding: 5px;
+      padding: 10px;
       margin: 10px 0;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
       h3{
         margin: 3px 0;
       }
+    }
+    li#other-search{
+      background-color: $color-main-light;
+      color: white;
+      border-radius: 10px;
     }
   }
   .donating{
@@ -27,8 +36,7 @@
     float: right;
     display: inline;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    background: #F5F5F5;
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 

@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   require 'uri'
   def index
     if params[:ingredients].nil? && current_user.items.in_use.count != 0
-      @ingredients = current_user.items.in_use.map(&:food)
+      @ingredients = current_user.items.includes(:food).in_use.map(&:food)
     elsif !params[:ingredients].nil?
       @ingredients = params[:ingredients].map{|id| Food.find(id)}
     else

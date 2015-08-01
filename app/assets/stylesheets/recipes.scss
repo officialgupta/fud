@@ -1,3 +1,5 @@
+@import "prequisites";
+
 .recipes-container{
   width: 80%;
   margin-left: auto;
@@ -37,10 +39,17 @@
 }
 
 .recipe-container{
-  width: 80%;
+  margin-top: 0;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
+  box-shadow: 2px 3px 21px -2px rgba(0, 0, 0, 0.46);
+  padding: 20px;
+  font-size: 15px;
+  h1 {
+    margin-top: 10px;
+  }
   img{
     float:left;
     display: inline;
@@ -52,7 +61,7 @@
   ul{
     float:left;
     display: inline;
-    width: 500px;
+    width: 60%;
     text-transform: capitalize;
   }
   ol{
@@ -61,4 +70,17 @@
   @media (max-width: 600px) {
     width: 98%;
   }
+}
+.random-margin {
+  margin-top: 5px;
+}
+
+h3 {
+  color: $color-button-light;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.nutrish {
+  color: #888;
 }

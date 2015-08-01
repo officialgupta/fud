@@ -1,6 +1,6 @@
 .recipe-container
-  = link_to "Back to recipe list", request.env["HTTP_REFERER"]
-  %h1= @recipe.name
+  = link_to "Back to recipe list", request.env["HTTP_REFERER"], class: "random-margin"
+  %h1.subtitle= @recipe.name
   %h3= "#{@recipe.cuisine} cuisine | #{@recipe.cooking_method} | Serves: #{@recipe.serves}"
 
   = image_tag(@recipe.image)
@@ -17,4 +17,4 @@
     - @recipe.directions.each do |dir|
       %li= dir
 
-  = @recipe.nutritional_info.map{|k,v| "<strong>#{k.capitalize.gsub("_", " ")}: </strong>#{v}"}.join("<br>").html_safe
+  .nutrish= @recipe.nutritional_info.map{|k,v| "<strong>#{k.capitalize.gsub("_", " ")}: </strong>#{v}"}.join("<br>").html_safe

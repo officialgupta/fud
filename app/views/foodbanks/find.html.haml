@@ -26,4 +26,4 @@
         - current_user.items.donating.each do |item|
           %li= item.food.name
 
-      = link_to "Click here when you have donated these items!", donated_items_path
+      = link_to "Already donated?", donated_items_path, class: "green-button"
