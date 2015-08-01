@@ -10,20 +10,24 @@
     width: 46%;
     display: inline;
     float: left;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 2px 3px 21px -2px rgba(0, 0, 0, 0.46);
     margin: 1%;
     img {
       float: left;
       display: inline;
       width:25%;
+      border-radius: 100%;
       padding:8px;
       height: 100px;
       width: 100px;
+      margin: 15px 5px 0 15px;
+      box-shadow: 2px 3px 17px -2px rgba(0, 0, 0, 0.36);
     }
     .details {
       float: left;
       display: inline;
-      width: 70%
+      width: 70%;
+      padding: 5px;
     }
   }
   .page-links{
